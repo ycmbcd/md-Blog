@@ -21,19 +21,19 @@ PHP 5 以上
 
 # 安装
 
-0、配置修改后，如无效，请清空浏览器缓存，点击 `静态生成`；
-1、上传文件夹到站点根目录；
-2、输入网址登录，初次使用会提示密码设置。
+0. 配置修改后，如无效，请清空浏览器缓存，点击 `静态生成`；
+1. 上传文件夹到站点根目录；
+2. 输入网址登录，初次使用会提示密码设置。
 
 # 使用
 
 有 `ssl认证` 的网站浏览器访问：`https://您的域名/set/`
 无 `ssl认证` 的网站浏览器访问：`http://您的域名/set/`
 进行博客参数配置及页面生成，参照图：
-![IMAGE](https://raw.githubusercontent.com/ycmbcd/md-Blog/master/md/md-Blog教程/resources/89F6BE2C52667A7A93FC1DA3858F9059.jpg =450x68)
-![IMAGE](https://raw.githubusercontent.com/ycmbcd/md-Blog/master/md/md-Blog教程/resources/05F602BD030EF7CA7854C9F68B96D7BA.jpg =881x668)
-![IMAGE](https://raw.githubusercontent.com/ycmbcd/md-Blog/master/md/md-Blog教程/resources/265634F34D3A407136D1CF49E796452E.jpg =672x391)
-![IMAGE](https://raw.githubusercontent.com/ycmbcd/md-Blog/master/md/md-Blog教程/resources/FF150DCBE45FDA02FC654A43441488A3.jpg =584x426)
+![IMAGE](https://raw.githubusercontent.com/ycmbcd/md-Blog/master/md/md-Blog教程/resources/89F6BE2C52667A7A93FC1DA3858F9059.jpg)
+![IMAGE](https://raw.githubusercontent.com/ycmbcd/md-Blog/master/md/md-Blog教程/resources/05F602BD030EF7CA7854C9F68B96D7BA.jpg)
+![IMAGE](https://raw.githubusercontent.com/ycmbcd/md-Blog/master/md/md-Blog教程/resources/265634F34D3A407136D1CF49E796452E.jpg)
+![IMAGE](https://raw.githubusercontent.com/ycmbcd/md-Blog/master/md/md-Blog教程/resources/FF150DCBE45FDA02FC654A43441488A3.jpg)
 
 将你本地的 `MarkDown` 目录上传至网站根目录 `/md` 目录下
 注意：本博客只支持一级栏目划分，请参照下列结构：
@@ -53,24 +53,24 @@ PHP 5 以上
 
 # 目录
 
-/blog ... 存放博客网页文件
-/data ... 存放系统生成的站点数据
-/index ... 由系统生成的index列表
-/md ... 用户 MarkDown 文件放置文件夹
-/set ... 站点配置
-/set/api ... 系统功能
-/static ... 层叠样式表、JavaScript及第三方依赖
-/tpl ... 模板目录
-/favicon.ico ... 博客图标
-/index.html ... 系统生成的博客主页
+- /blog ... 存放博客网页文件
+- /data ... 存放系统生成的站点数据
+- /index ... 由系统生成的index列表
+- /md ... 用户 MarkDown 文件放置文件夹
+- /set ... 站点配置
+- /set/api ... 系统功能
+- /static ... 层叠样式表、JavaScript及第三方依赖
+- /tpl ... 模板目录
+- /favicon.ico ... 博客图标
+- /index.html ... 系统生成的博客主页
 
 # 系统更新
 
 保留以下目录，更新其他目录即可。
-/data ... 参数配置及站点数据文件夹
-/md ... 您的 MarkDown 文件夹
-/tpl ... （可选）如模板自定义，请保留
-/static ... （可选）如模板自定义，请保留
+- /data ... 参数配置及站点数据文件夹
+- /md ... 您的 MarkDown 文件夹
+- /tpl ... （可选）如模板自定义，请保留
+- /static ... （可选）如模板自定义，请保留
 
 # Tips
 

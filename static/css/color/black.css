@@ -1,0 +1,37 @@
+a,.b-title{
+    color: #2a2a2a;
+}
+a{
+    color:rgb(160, 160, 160);
+}
+a:hover{
+    color:#2a2a2a;
+}
+.search_btn:hover{
+    color: #2a2a2a;
+}
+.b-name a{
+    color:#2a2a2a;
+}
+.b-name a:hover{
+    color:#2a2a2a;
+}
+.page_item{
+    border-color: #2a2a2a;
+    background: #2a2a2a;
+    color: #FFF;
+}
+.page_item:hover{
+    background: #FFF;
+    color:#2a2a2a;
+}
+.page_active{
+    background: #FFF;
+    color: #2a2a2a;
+}
+.code_bar{
+    color: #2a2a2a
+}
+blockquote{
+    border-color: #2a2a2a;
+}

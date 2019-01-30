@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>欢迎使用md-Blog</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="../static/lib/snack.min.css">
+    <link rel="stylesheet" href="../static/css/hover.css">
+    <link rel="stylesheet" href="../static/css/default.css">
+</head>
+<body>
+    <div class="container">
+        <div id="msg_box">
+            <div id="msg_txt"></div>
+        </div>
+        <div class="row">
+            <br>
+            <h2 class="b-name">md-Blog 登录</h2>
+            <br>
+            <hr>
+        </div>
+        <div class="row">
+            <br>
+            <br>
+            <br>
+            <div class="form-group">
+                <label for="blog_pwd" class="col-offset-2 col-2 form-label">输入密码</label>
+                <div class="col-3">
+                    <input id="blog_pwd" onkeyup="ck_pwd()" name="blog_pwd" class="form-field" type="password" />
+                </div>
+                <div class="col-2">
+                    <button style="padding: 0 1rem;" class="btn success" onclick="login_blog()"><i class="fa fa-check fa-fw"></i> 登 录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../static/lib/jquery-3.3.1.min.js"></script>
+<script src="./login.js"></script>

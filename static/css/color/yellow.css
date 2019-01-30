@@ -1,0 +1,31 @@
+a,.b-title{
+    color: #eab003;
+}
+.search_btn:hover{
+    color: #eab003;
+}
+.b-name a{
+    color:#2a2a2a;
+}
+.b-name a:hover{
+    color:#eab003;
+}
+.page_item{
+    border-color: #eab003;
+    background: #eab003;
+    color: #FFF;
+}
+.page_item:hover{
+    background: #FFF;
+    color:#eab003;
+}
+.page_active{
+    background: #FFF;
+    color: #eab003;
+}
+.code_bar{
+    color: #eab003
+}
+blockquote{
+    border-color: #eab003;
+}

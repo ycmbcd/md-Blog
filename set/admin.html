@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <title>md-Blog 控制台</title>
+    <link rel="stylesheet" href="../static/lib/snack.min.css">
+    <link rel="stylesheet" href="../static/lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/default.css">
+    <link rel="stylesheet" href="../static/css/hover.css">
+    <link rel="stylesheet" id="code_link" href="../static/lib/styles/github.css">
+    <link rel="stylesheet" id="color_link" href="../static/css/color/blue.css">
+    <style>
+    #run_info{
+        display: none;
+        line-height: 16px;
+        color: #969696;
+    }
+    #blog_conf{
+        margin-top: 30px;
+    }
+    #list_demo,#page_demo{
+        width:180px;
+        height:30px;
+        color: #2d84de;
+        line-height: 30px;
+        font-size: 12px;
+        text-align: center;
+    }
+    #list_demo:hover,#page_demo:hover{
+        background: #faf8f8;
+    }
+    .arc_top{
+        width: 50%;
+        height:40rem;
+        box-shadow: .1rem .1rem 1rem #666;
+        position: fixed;
+        top:15%;
+        left:25%;
+        background: #FFF;
+        z-index: 100;
+        display: none;
+    }
+    .close_btn{
+        position: absolute;
+        right:2rem;
+        top:1.6rem;
+        color: #969696;
+        font-size: 1.6rem;
+    }
+    .close_btn:hover{
+        color: #FF6600;
+        cursor: pointer;
+    }
+    #arc_list ul{
+        padding: 2rem 4rem;
+        color:#2d84de;
+        height: 34rem;
+        overflow-y: scroll;
+    }
+    #arc_list li{
+        padding: .6rem;
+    }
+    #arc_list li:hover{
+        cursor: pointer;
+        background: #f7f7f7;
+        color: #F60;
+    }
+    #arc_top_set{
+        color: #2d84de;
+        cursor: pointer;
+        padding-top: .4rem;
+        margin-left: -2rem;
+    }
+    #arc_top_set:hover{
+        color: #F60;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header"></div>
+        <div class="row">
+            <div class="col-offset-10">
+                <div class="tagr gray pointer" onclick="logout()">安全退出</div>
+            </div>
+        </div>
+        <hr style="margin:0 0 3rem 0;">
+        <div class="row mt">
+            <button onclick="make_html()" class="btn primary col-4 col-offset-4"><i class="fa fa-file-text fa-fw"></i> <span id="make_status">静态生成</span></button>
+        </div>
+        <div class="arc_top">
+            <br>
+            <h4 class="tagc gray">点击文章标题即可置顶（需静态生成）</h4>
+            <div id="arc_list">
+            </div>
+            <div class="close_btn" onclick="hide_arc_top()"><i class="fa fa-close"> 关闭</i></div>
+        </div>
+        <div class="clear"></div>
+        <div class="row mt">
+            <h6 id="run_info" class="box"></h6>
+        </div>
+        <form id="blog_conf" class="row mt form-horizontal box">
+            <textarea id="copy_code"></textarea>
+            <br>
+            <h3 class="tagc">基本设置</h3>
+            <br>
+            <br>
+            <div class="form-group">
+                <label for="arc_top_title" class="col-offset-2 col-2 form-label">置顶文章</label>
+                <div class="col-6">
+                    <input id="arc_top_title" name="arc_top_title" readonly class="form-field" type="text" />
+                </div>
+                <div class="col-1"><div id="arc_top_set" onclick="show_arc_top();get_arc();"><i class="fa fa-arrow-up fa-fw"></i> <span id="make_status">设置</span></div></div>
+            </div>
+            <div class="form-group">
+                <label for="blog_name" class="col-offset-2 col-2 form-label">博客名称</label>
+                <div class="col-3">
+                    <input id="blog_name" name="blog_name" class="form-field" type="text" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="blog_info" class="col-offset-2 col-2 form-label">副标题</label>
+                <div class="col-3">
+                    <input id="blog_info" name="blog_info" class="form-field" type="text" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="blog_ipc" class="col-offset-2 col-2 form-label">备案号</label>
+                <div class="col-3">
+                    <input id="blog_ipc" name="blog_ipc" class="form-field" type="text" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="my_name" class="col-offset-2 col-2 form-label">昵称</label>
+                <div class="col-3">
+                    <input id="my_name" name="my_name" class="form-field" type="text" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="my_info" class="col-offset-2 col-2 form-label">介绍</label>
+                <div class="col-4">
+                    <textarea class="form-field" name="my_info" id="my_info" cols="10" rows="6"></textarea>
+                </div>
+            </div>
+            <!-- 每页条数 -->
+            <div class="form-group">
+                <label for="page_size" class="col-offset-2 col-2 form-label">每页条数</label>
+                <div class="col-1">
+                    <select id="page_size" name="page_size" class="form-field">
+                        <option>2</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>8</option>
+                        <option>10</option>
+                        <option>15</option>
+                        <option>20</option>
+                        <option>25</option>
+                        <option>30</option>
+                    </select>
+                </div>
+            </div>
+            <!-- 主色调 -->
+            <div class="form-group">
+                <label for="b_color" class="col-offset-2 col-2 form-label">主色调</label>
+                <div class="col-1">
+                    <select id="b_color" onchange="b_color_demo()" name="b_color" class="form-field">
+                        <option value="red">红</option>
+                        <option value="orange">橙</option>
+                        <option value="yellow">黄</option>
+                        <option value="green">绿</option>
+                        <option value="ching">青</option>
+                        <option value="blue">蓝</option>
+                        <option value="purple">紫</option>
+                        <option value="black">黑</option>
+                        <option value="gray">灰</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <a target="">主色调效果</a>
+                </div>
+            </div>
+            <!-- 列表浮动效果 -->
+            <div class="form-group">
+                <label for="list_hover" class="col-offset-2 col-2 form-label">列表浮动效果</label>
+                <div class="col-3">
+                    <select id="list_hover" onchange="list_demo()" name="list_hover" class="form-field">
+                        <option>None</option>
+                        <option>hvr-shadow</option>
+                        <option>hvr-float-shadow</option>
+                        <option>hvr-glow</option>
+                        <option>hvr-box-shadow-outset</option>
+                        <option>hvr-overline-from-center</option>
+                        <option>hvr-overline-from-left</option>
+                        <option>hvr-underline-from-left</option>
+                        <option>hvr-underline-from-center</option>
+                        <option>hvr-reveal</option>
+                        <option>hvr-trim</option>
+                        <option>hvr-fade</option>
+                        <option>hvr-sweep-to-right</option>
+                        <option>hvr-curl-top-left</option>
+                        <option>hvr-curl-top-right</option>
+                        <option>hvr-curl-bottom-left</option>
+                        <option>hvr-curl-bottom-right</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <div id="list_demo">悬浮鼠标，查看列表效果</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="page_hover" class="col-offset-2 col-2 form-label">列表浮动效果</label>
+                <div class="col-3">
+                    <select id="page_hover" onchange="page_demo()" name="page_hover" class="form-field">
+                        <option>None</option>
+                        <option>hvr-fade</option>
+                        <option>hvr-shadow</option>
+                        <option>hvr-float-shadow</option>
+                        <option>hvr-glow</option>
+                        <option>hvr-box-shadow-outset</option>
+                        <option>hvr-overline-from-center</option>
+                        <option>hvr-overline-from-left</option>
+                        <option>hvr-underline-from-left</option>
+                        <option>hvr-underline-from-center</option>
+                        <option>hvr-reveal</option>
+                        <option>hvr-trim</option>
+                        <option>hvr-sweep-to-right</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <div id="page_demo">悬浮鼠标，查看分页效果</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="p_indent" class="col-offset-2 col-2 form-label">段落开头样式</label>
+                <div class="col-3">
+                    <select id="p_indent" onchange="p_indent_demo()" name="p_indent" class="form-field">
+                        <option value="">开头对齐</option>
+                        <option value="p_indent">开头空两个字的距离</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <p id="p_indent_demo">
+                        欢迎使用 md-Blog，本博客系统可以将 MarkDown 文件生成一个站点博客，且不需要数据库的依赖。注：本博客系统不提供 MarkDown编辑器 功能。
+                    </p>
+                </div>
+            </div>
+            <!-- Coder -->
+            <hr>
+            <br>
+            <h3 class="tagc">Coder 设置</h3>
+            <br>
+            <br>
+            <div class="form-group">
+                <label for="github" class="col-offset-2 col-2 form-label">GitHub 地址</label>
+                <div class="col-3">
+                    <input id="github" name="github" class="form-field" type="text" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="fork_me" class="col-offset-2 col-2 form-label">Fork me 彩带</label>
+                <div class="col-1">
+                    <select id="fork_me" name="fork_me" class="form-field">
+                        <option>-</option>
+                        <option value="red">红</option>
+                        <option value="dark">黑</option>
+                        <option value="green">绿</option>
+                        <option value="orange">橙</option>
+                        <option value="white">白</option>
+                        <option value="gray">灰</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="code_css" class="col-offset-2 col-2 form-label">代码样式</label>
+                <div class="col-3">
+                    <select id="code_css" onchange="cg_code_css()" name="code_css" class="form-field">
+                        <option>a11y-dark</option>
+                        <option>a11y-light</option>
+                        <option>agate</option>
+                        <option>an-old-hope</option>
+                        <option>androidstudio</option>
+                        <option>arduino-light</option>
+                        <option>arta</option>
+                        <option>ascetic</option>
+                        <option>atelier-cave-dark</option>
+                        <option>atelier-cave-light</option>
+                        <option>atelier-dune-dark</option>
+                        <option>atelier-dune-light</option>
+                        <option>atelier-estuary-dark</option>
+                        <option>atelier-estuary-light</option>
+                        <option>atelier-forest-dark</option>
+                        <option>atelier-forest-light</option>
+                        <option>atelier-heath-dark</option>
+                        <option>atelier-heath-light</option>
+                        <option>atelier-lakeside-dark</option>
+                        <option>atelier-lakeside-light</option>
+                        <option>atelier-plateau-dark</option>
+                        <option>atelier-plateau-light</option>
+                        <option>atelier-savanna-dark</option>
+                        <option>atelier-savanna-light</option>
+                        <option>atelier-seaside-dark</option>
+                        <option>atelier-seaside-light</option>
+                        <option>atelier-sulphurpool-dark</option>
+                        <option>atelier-sulphurpool-light</option>
+                        <option>atom-one-dark-reasonable</option>
+                        <option>atom-one-dark</option>
+                        <option>atom-one-light</option>
+                        <option>brown-paper</option>
+                        <option>codepen-embed</option>
+                        <option>color-brewer</option>
+                        <option>darcula</option>
+                        <option>dark</option>
+                        <option>darkula</option>
+                        <option>default</option>
+                        <option>docco</option>
+                        <option>dracula</option>
+                        <option>far</option>
+                        <option>foundation</option>
+                        <option>github-gist</option>
+                        <option>github</option>
+                        <option>gml</option>
+                        <option>googlecode</option>
+                        <option>grayscale</option>
+                        <option>gruvbox-dark</option>
+                        <option>gruvbox-light</option>
+                        <option>hopscotch</option>
+                        <option>hybrid</option>
+                        <option>idea</option>
+                        <option>ir-black</option>
+                        <option>isbl-editor-dark</option>
+                        <option>isbl-editor-light</option>
+                        <option>kimbie.dark</option>
+                        <option>kimbie.light</option>
+                        <option>lightfair</option>
+                        <option>magula</option>
+                        <option>mono-blue</option>
+                        <option>monokai-sublime</option>
+                        <option>monokai</option>
+                        <option>nord</option>
+                        <option>obsidian</option>
+                        <option>ocean</option>
+                        <option>paraiso-dark</option>
+                        <option>paraiso-light</option>
+                        <option>pojoaque</option>
+                        <option>purebasic</option>
+                        <option>qtcreator_dark</option>
+                        <option>qtcreator_light</option>
+                        <option>railscasts</option>
+                        <option>rainbow</option>
+                        <option>routeros</option>
+                        <option>school-book</option>
+                        <option>shades-of-purple</option>
+                        <option>solarized-dark</option>
+                        <option>solarized-light</option>
+                        <option>sunburst</option>
+                        <option>tomorrow-night-blue</option>
+                        <option>tomorrow-night-bright</option>
+                        <option>tomorrow-night-eighties</option>
+                        <option>tomorrow-night</option>
+                        <option>tomorrow</option>
+                        <option>vs</option>
+                        <option>vs2015</option>
+                        <option>xcode</option>
+                        <option>xt256</option>
+                        <option>zenburn</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-offset-3 col-6">
+                    <pre><code class="js">$(&quot;.line_num&quot;).each(function(){
+    var now_num = $(&quot;.line_num&quot;).index(this) + 1;
+    $(this).text(now_num);
+})</code></pre>
+                </div>
+            </div>
+            <!-- 畅言 -->
+            <hr>
+            <br>
+            <h3 class="tagc">畅言评论设置</h3>
+            <br>
+            <br>
+            <div class="row">
+                <div>
+                    <div class="form-group">
+                        <label class="col-offset-2 col-2 form-label">是否开启评论</label>
+                        <div class="col-3">
+                            <div class="radio inline">
+                                <input type="radio" name="cy_status" onclick="ck_cy(1)" id="cy_on" value="on" >
+                                <label for="cy_on">开启</label>
+                            </div>
+                            <div class="radio inline">
+                                <input type="radio" name="cy_status" onclick="ck_cy(0)" id="cy_off" value="off" >
+                                <label for="cy_off">关闭</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group cy_box">
+                        <label for="cy_appid" class="col-offset-2 col-2 form-label">APP ID</label>
+                        <div class="col-2">
+                            <input id="cy_appid" name="cy_appid" class="form-field" type="text" />
+                        </div>
+                    </div>
+                    <div class="form-group cy_box">
+                        <label for="cy_conf" class="col-offset-2 col-2 form-label">APP KEY</label>
+                        <div class="col-4">
+                            <input id="cy_conf" name="cy_conf" class="form-field" type="text" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 百度统计 -->
+            <hr>
+            <br>
+            <h3 class="tagc">百度统计</h3>
+            <br>
+            <br>
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-offset-2 col-2 form-label">是否开启百度统计</label>
+                    <div class="col-3">
+                        <div class="radio inline">
+                            <input type="radio" name="bd_status" onclick="ck_bd(1)" id="cnzz_on" value="on" >
+                            <label for="cnzz_on">开启</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="radio" name="bd_status" onclick="ck_bd(0)" id="cnzz_off" value="off" >
+                            <label for="cnzz_off">关闭</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group bd_box">
+                <label for="bd_code" class="col-offset-2 col-2 form-label">脚本代码</label>
+                <div class="col-4">
+                    <textarea class="form-field" name="bd_code" id="bd_code" cols="10" rows="6"></textarea>
+                </div>
+            </div>
+        <!-- /form -->
+        </form>
+        <button class="btn success col-4 col-offset-4" onclick="save_conf()"><i class="fa fa-check fa-fw"></i> 保 存</button>
+        <div class="clear"></div>
+        
+
+    </div>
+</body>
+</html>
+<script src="../static/lib/jquery-3.3.1.min.js"></script>
+<script src="../static/lib/highlight.min.js"></script>
+<script src="../static/lib/clipboard.min.js"></script>
+<script src="./set.js"></script>
+<script src="../static/js/blog.js"></script>

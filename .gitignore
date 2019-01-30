@@ -1,0 +1,8 @@
+*.DS_Store
+/blog/*
+/index/*
+index.html
+/data/click
+/data/blog.lock
+/data/blog.json
+/data/list.json

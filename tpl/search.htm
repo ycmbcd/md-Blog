@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <title>搜索结果-{title}</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/static/lib/snack.min.css">
+    <link rel="stylesheet" href="/static/css/hover.css">
+    <link rel="stylesheet" href="/static/css/default.css">
+    <link rel="stylesheet" href="/static/css/color/{b_color}.css">
+    <link rel="stylesheet" href="/static/lib/font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        {header}
+        <div class="header_total gray">
+            <span class="powered">Powered by md-Blog</span>&nbsp;&nbsp;文 - <span id="total_num"></span> 篇&nbsp;&nbsp;访客 - <span id="visitor_num"></span>
+        </div>
+        <hr class="header_hr">
+        <div class="row">
+            <div class="col-9">     
+                <div class="boxes">
+                    {list}
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="col-3 side_list">
+                {side_list}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="/static/lib/jquery-3.3.1.min.js"></script>
+<script src="/static/js/default.js"></script>
+<script src="/static/lib/math-jax/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="/static/js/math-config.js"></script>

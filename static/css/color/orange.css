@@ -1,0 +1,31 @@
+a,.b-title{
+    color: #ff5722;
+}
+.search_btn:hover{
+    color: #ff5722;
+}
+.b-name a{
+    color:#2a2a2a;
+}
+.b-name a:hover{
+    color:#ff5722;
+}
+.page_item{
+    border-color: #ff5722;
+    background: #ff5722;
+    color: #FFF;
+}
+.page_item:hover{
+    background: #FFF;
+    color:#ff5722;
+}
+.page_active{
+    background: #FFF;
+    color: #ff5722;
+}
+.code_bar{
+    color: #ff5722
+}
+blockquote{
+    border-color: #ff5722;
+}

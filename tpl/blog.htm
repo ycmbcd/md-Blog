@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <title>{title}</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/static/lib/snack.min.css">
+    <link rel="stylesheet" href="/static/css/default.css">
+    <link rel="stylesheet" href="/static/lib/styles/{code_css}.css">
+    <link rel="stylesheet" href="/static/css/color/{b_color}.css">
+    <link rel="stylesheet" href="/static/lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/blog.css">
+</head>
+<body>
+    <div class="container">
+        {header}
+        <div class="header_total gray"><span class="powered">Powered by md-Blog</span>&nbsp;&nbsp;文 - <span id="total_num"></span> 篇&nbsp;&nbsp;访客 - <span id="visitor_num"></span> </div>
+        <hr class="header_hr">
+        <div class="row">
+            <div class="col-9 b-body">
+                <h2 class="b-title">{title}</h2>
+                <br>
+                <h5 class="tagr gray">更新：{u_time} &nbsp;/&nbsp; 创建：{c_time} &nbsp;/&nbsp; 分类：{list_name} &nbsp;/&nbsp; <span class="click_number"></span></h5>
+                <div class="row">
+                    <hr class="b-line">
+                        {article}
+                    <hr class="b-line">
+                </div>
+                {cy_comment} <!-- 调用畅言 -->
+            </div>
+
+            <div class="col-3 side_list">                    
+            </div>
+        </div>
+        <textarea id="copy_code"></textarea>
+    </div>
+</body>
+</html>
+<script src="/static/lib/highlight.min.js"></script>
+<script src="/static/lib/jquery-3.3.1.min.js"></script>
+<script src="/static/js/default.js"></script>
+<script src="/static/js/blog.js"></script>
+<script src="/static/lib/clipboard.min.js"></script>
+<script src="/static/lib/math-jax/MathJax.js?config=TeX-AMS_HTML"></script>
+<script src="/static/js/math-config.js"></script>
+
+  

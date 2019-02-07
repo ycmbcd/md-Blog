@@ -79,6 +79,9 @@
     #arc_top_set:hover{
         color: #F60;
     }
+    .qr_code{
+        width:80%;
+    }
     </style>
 </head>
 <body>
@@ -443,11 +446,48 @@
                     <textarea class="form-field" name="bd_code" id="bd_code" cols="10" rows="6"></textarea>
                 </div>
             </div>
+            <hr>
+            <br>
+            <h3 class="tagc">打赏设置（可添加两个收钱码，如：微信、支付宝）</h3>
+            <br>
+            <div class="form-group">
+                <label for="pay_txt" class="col-offset-2 col-2 form-label">请打赏文字说明</label>
+                <div class="col-4">
+                        <input id="pay_txt" name="pay_txt" placeholder="输入打赏感谢词" class="form-field" type="text" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-4 col-offset-3">
+                    <input onchange="ck_wxpay()" class="form-field" id="wx_qrcode" type="file"/>
+                    <input type="hidden" name="wx_qrcode" id="val_wx_qrcode">
+                </div>
+                <div class="col-4">
+                    <div class="btn danger col-4" onclick="remove_wxqr()"><i class="fa fa-trash fa-fw"></i>清除打赏</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-4 col-offset-4">
+                    <img id="show_wx_qrcode" class="qr_code">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-4 col-offset-3">
+                    <input onchange="ck_alipay()" class="form-field" id="ali_qrcode" type="file"/>
+                    <input type="hidden" name="ali_qrcode" id="val_ali_qrcode">
+                </div>
+                <div class="col-4">
+                    <div class="btn danger col-4" onclick="remove_aliqr()"><i class="fa fa-trash fa-fw"></i>清除打赏</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-4 col-offset-4">
+                    <img id="show_ali_qrcode" class="qr_code">
+                </div>
+            </div>
         <!-- /form -->
         </form>
         <button class="btn success col-4 col-offset-4" onclick="save_conf()"><i class="fa fa-check fa-fw"></i> 保 存</button>
         <div class="clear"></div>
-        
 
     </div>
 </body>

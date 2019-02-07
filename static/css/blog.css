@@ -43,3 +43,19 @@ p{
     text-align: left;
     margin-bottom: 4rem;
 }
+.pay_txt{
+    text-shadow: .1rem .1rem .1rem #ddd;
+    color: #2a2a2a;
+}
+.pay_item{
+    margin-top: 1rem;
+    padding:.5rem 1rem;
+    box-shadow: 0 0 .5rem #ddd;
+    border-radius: .8rem;
+    transition-duration: .15s;
+    cursor: pointer;
+}
+.pay_item:hover{
+    margin-top: .5rem;
+    box-shadow: 0 0 4rem #9E9E9E;
+}

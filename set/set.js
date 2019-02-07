@@ -112,6 +112,11 @@ function get_conf(){
         $('#page_demo').addClass(res.page_hover);
         $("input[name='bd_status'][value="+res.bd_status+"]").attr("checked",true);
         $("#bd_code").val(res.bd_code);
+        $("#pay_txt").val(res.pay_txt);
+        $("#val_wx_qrcode").val(res.wx_qrcode);
+        $("#show_wx_qrcode").attr('src', res.wx_qrcode);
+        $("#val_ali_qrcode").val(res.ali_qrcode);
+        $("#show_ali_qrcode").attr('src', res.ali_qrcode);
         var new_code = '../static/lib/styles/' + res.code_css + '.css';
         document.getElementById("code_link").setAttribute("href",new_code);
         var new_color = '../static/css/color/' + res.b_color + '.css';
@@ -176,4 +181,46 @@ function ck_bd(status){
     }else{
         $(".bd_box").hide();
     }
+}
+
+// 打赏
+function ck_wxpay(){
+    uploadImage('wx_qrcode');
+}
+
+function ck_alipay(){
+    uploadImage('ali_qrcode');
+}
+
+function uploadImage(method_id) {
+    var imageForm = new FormData();
+    imageForm.append("qrImg", $("#"+method_id).get(0).files[0]);
+    var url = '../set/api/upload.php';
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: imageForm,
+        processData: false,
+        contentType: false,
+        success: function (data) {
+            if(data == 'No File'){
+                alert_msg('msg_danger','上传错误，请重试。');
+            }else{
+                $("#show_" + method_id).attr("src", data);
+                $("#val_" + method_id).val(data);
+            }
+        }
+    });
+}
+
+function remove_aliqr(){
+    $('#ali_qrcode').val('')
+    $('#val_ali_qrcode').val('')
+    $('#show_ali_qrcode').attr('src','')
+}
+
+function remove_wxqr(){
+    $('#wx_qrcode').val('')
+    $('#val_wx_qrcode').val('')
+    $('#show_wx_qrcode').attr('src','')
 }

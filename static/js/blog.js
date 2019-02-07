@@ -49,6 +49,19 @@ $(function(){
         })
     }
 
+    // 打赏调取
+    function append_pay(){
+        var file = '../../data/blog.json';
+    
+        $.getJSON(file,{random:Math.random()},function(res){
+            if(res.wx_qrcode || res.ali_qrcode){
+                $(".pay_box").append('<br><h3 class="tagc pay_txt">'+ res.pay_txt +'</h3><br>');
+                $(".pay_box").append('<div class="col-4 pay_item col-offset-1"><img src="'+res.ali_qrcode+'" /></div>');
+                $(".pay_box").append('<div class="col-4 pay_item col-offset-2"><img src="'+res.wx_qrcode+'" /></div>');
+            }
+        })
+    }
+
     setTimeout(() => {
         $('.click_number').each(function(){
             var _this = $(this);
@@ -63,6 +76,7 @@ $(function(){
                 }, 1000);
             })
         })
+        append_pay();
     }, 100);
 
 });

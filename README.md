@@ -1,10 +1,15 @@
 > 欢迎使用 md-Blog，本博客系统可以将 MarkDown 文件生成一个全静态页面的站点blog，且不需要数据库的依赖。注：本博客系统不提供 MarkDown编辑器 功能。
 
-# 演示（Demo）
+# md-Blog
+![](https://img.shields.io/github/license/ycmbcd/md-Blog.svg?style=flat)
+![](https://img.shields.io/badge/Downloads-click-brightgreen.svg)
+![](https://img.shields.io/github/release/ycmbcd/md-Blog.svg?style=flat)
+
+## 演示（Demo）
 
 https://www.ycmbcd.com
 
-# 特色
+## 特色
 
 1. 支持文章付款码、二维码打赏功能（例：`微信`、`支付宝`）；
 2. 整合谷歌广告联盟 `Google Adsense` 投放;
@@ -21,18 +26,18 @@ https://www.ycmbcd.com
 13. 段落 `开头对齐` 设置；
 14. `备案号` 选填。
 
-# 配置需求
+## 配置需求
 
 Apache / Nginx
 PHP 5 以上
 
-# 安装
+## 安装
 
 0. 配置修改后，如无效，请清空浏览器缓存，点击 `全站静态生成`；
 1. 上传文件夹到站点根目录；
 2. 输入网址登录，初次使用会提示密码设置。
 
-# 使用
+## 使用
 
 有 `ssl认证` 的网站浏览器访问：`https://您的域名/set/`
 无 `ssl认证` 的网站浏览器访问：`http://您的域名/set/`
@@ -55,7 +60,7 @@ PHP 5 以上
 ```
 放入后点击 `全站静态生成` 按钮，拿起茶杯的功夫，系统便自动生成好了您的博客。
 
-# 目录
+## 目录
 
 - /blog ... 存放博客网页文件
 - /data ... 存放系统生成的站点数据
@@ -68,7 +73,7 @@ PHP 5 以上
 - /favicon.ico ... 博客图标
 - /index.html ... 系统生成的博客主页
 
-# 系统更新
+## 系统更新
 
 保留以下目录，更新其他目录即可。
 - /data ... 参数配置及站点数据文件夹
@@ -76,7 +81,7 @@ PHP 5 以上
 - /tpl ... （可选）如模板自定义，请保留
 - /static ... （可选）如模板自定义，请保留
 
-# Tips
+## Tips
 
 - 目录名不要出现空格，否则图片会挂；
 - .md 文件中的空格用  `&nbsp;` 代替；
@@ -95,14 +100,14 @@ chown -R apache:apache * #在站点根目录执行
 ```
 - 忘记密码或者修改密码，直接删除 `/data/blog.lock` 文件即可。
 
-# 二次开发
+## 二次开发
 
 1. 您可以在 `/tpl`,`/static` 目录中对博客模板样式进行开发；
 2. 集成 JQuery，`/static/lib/jquery-3.3.1.min.js`；
 3. 集成 Font-Awesome 图标库， `/static/lib/font-awesome-4.7.0/css/font-awesome.min.css`；
 3. 响应式 UI 集成 snack， `/static/lib/snack.min.css` 参考：https://nzbin.github.io/snack/。
 
-# 鸣谢
+## 鸣谢
 
 * SegmentFault Team &nbsp; https://segmentfault.com/
 * MathJax &nbsp; https://www.mathjax.org/
@@ -112,12 +117,12 @@ chown -R apache:apache * #在站点根目录执行
 * Highlight.js &nbsp; https://github.com/highlightjs/highlight.js/
 * Snack &nbsp; https://github.com/nzbin/snack
 
-# License
+## License
 MIT License
 
-# 联系我
+## 联系我
 ycmbcd@foxmail.com
 
-# 感谢您的支持与厚爱
+## 感谢您的支持与厚爱
 
 ![IMAGE](https://raw.githubusercontent.com/ycmbcd/images_repo/master/md-blog/temp.jpg)

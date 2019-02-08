@@ -6,19 +6,20 @@ https://www.ycmbcd.com
 
 # 特色
 
-1. 支持文章付款码、二维码打赏功能（例：微信、支付宝）；
-2. 支持文章置顶；
-3. 多种代码格式化样式自定义（需要点击`静态生成`重新生成页面）；
-4. 代码块一键复制；
-5. 支持数学公式（$a_n+1=a_{n+1}+\sqrt{n}+\frac{1}{n}$）；
-6. blog 主色调修改（需要点击`静态生成`重新生成页面）；
-7. 每页条数自定义（需要点击`静态生成`重新生成页面）；
-8. GitHub 地址及彩带功能；
-9. 多种列表、页码动画效果；
-10. 段落开头对齐设置；
-11. 整合畅言评论模块；
-12. 整合百度统计；
-13. 备案号选填。
+1. 支持文章付款码、二维码打赏功能（例：`微信`、`支付宝`）；
+2. 整合谷歌广告联盟 `Google Adsense` 投放;
+3. 整合社会化评论 `畅言` 评论模块；
+4. 整合 `百度统计`；
+5. 支持文章 `置顶`；
+6. 多种 `代码高亮` 样式自定义（需要点击`全站静态生成`重新生成页面）；
+7. 代码块 `一键复制`；
+8. 支持 `数学公式`（$a_n+1=a_{n+1}+\sqrt{n}+\frac{1}{n}$）；
+9. Blog 主色调修改（需要点击`全站静态生成`重新生成页面）；
+10. 每页条数自定义（需要点击`全站静态生成`重新生成页面）；
+11. `Fork me on GitHub` 及 `GitHub 彩带`功能；
+12. 多种列表、页码 `动画效果`；
+13. 段落 `开头对齐` 设置；
+14. `备案号` 选填。
 
 # 配置需求
 
@@ -27,7 +28,7 @@ PHP 5 以上
 
 # 安装
 
-0. 配置修改后，如无效，请清空浏览器缓存，点击 `静态生成`；
+0. 配置修改后，如无效，请清空浏览器缓存，点击 `全站静态生成`；
 1. 上传文件夹到站点根目录；
 2. 输入网址登录，初次使用会提示密码设置。
 
@@ -36,10 +37,7 @@ PHP 5 以上
 有 `ssl认证` 的网站浏览器访问：`https://您的域名/set/`
 无 `ssl认证` 的网站浏览器访问：`http://您的域名/set/`
 进行博客参数配置及页面生成，参照图：
-![IMAGE](https://raw.githubusercontent.com/ycmbcd/md-Blog/master/md/md-Blog教程/resources/89F6BE2C52667A7A93FC1DA3858F9059.jpg)
-![IMAGE](https://raw.githubusercontent.com/ycmbcd/md-Blog/master/md/md-Blog教程/resources/05F602BD030EF7CA7854C9F68B96D7BA.jpg)
-![IMAGE](https://raw.githubusercontent.com/ycmbcd/md-Blog/master/md/md-Blog教程/resources/265634F34D3A407136D1CF49E796452E.jpg)
-![IMAGE](https://raw.githubusercontent.com/ycmbcd/md-Blog/master/md/md-Blog教程/resources/FF150DCBE45FDA02FC654A43441488A3.jpg)
+![IMAGE](https://raw.githubusercontent.com/ycmbcd/images_repo/master/md-blog/0.jpg)
 
 将你本地的 `MarkDown` 目录上传至网站根目录 `/md` 目录下
 注意：本博客只支持一级栏目划分，请参照下列结构：
@@ -55,7 +53,7 @@ PHP 5 以上
 /md/红楼梦/第二回.md
 ...
 ```
-放入后点击 `静态生成` 按钮，拿起茶杯的功夫，系统便自动生成好了您的博客。
+放入后点击 `全站静态生成` 按钮，拿起茶杯的功夫，系统便自动生成好了您的博客。
 
 # 目录
 

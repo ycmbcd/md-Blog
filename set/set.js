@@ -112,6 +112,8 @@ function get_conf(){
         $('#page_demo').addClass(res.page_hover);
         $("input[name='bd_status'][value="+res.bd_status+"]").attr("checked",true);
         $("#bd_code").val(res.bd_code);
+        $("#gad_code").val(res.gad_code);
+        $("input[name='gad_status'][value="+res.gad_status+"]").attr("checked",true);
         $("#pay_txt").val(res.pay_txt);
         $("#val_wx_qrcode").val(res.wx_qrcode);
         $("#show_wx_qrcode").attr('src', res.wx_qrcode);
@@ -130,6 +132,11 @@ function get_conf(){
             $(".bd_box").show();
         }else{
             $(".bd_box").hide();
+        }
+        if(res.gad_status=='on'){
+            $(".gad_box").show();
+        }else{
+            $(".gad_box").hide();
         }
     })
 }
@@ -180,6 +187,14 @@ function ck_bd(status){
         $(".bd_box").show();
     }else{
         $(".bd_box").hide();
+    }
+}
+
+function ck_gad(status){
+    if(status === 1){
+        $(".gad_box").show();
+    }else{
+        $(".gad_box").hide();
     }
 }
 

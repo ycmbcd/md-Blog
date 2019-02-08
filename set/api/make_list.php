@@ -88,6 +88,9 @@
         // 加载主题色
         $list_tpl = str_replace("{b_color}",$blog_conf['b_color'],$list_tpl);
         
+        // Google Adsense
+        $list_tpl = str_replace("{google_adsense}",$blog_conf['gad_code'],$list_tpl);
+        
         $strs = '';
 
         foreach($list_names as $list){

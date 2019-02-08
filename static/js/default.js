@@ -29,7 +29,6 @@ $(function(){
     }
     setTimeout(() => {
         get_total();
-        p_indent();
     }, 100);
 
     // 加载统计
@@ -49,72 +48,68 @@ $(function(){
         })
     })
 
-    function p_indent(){
+    var arr_json = '';
+    var file = '../../data/blog.json';
+    $.getJSON(file,{random:Math.random()},function(res){
+        arr_json = res;
+        load_action();
+    })
+
+    function load_action(){
         // p 段落开头样式
-        var file = '../../data/blog.json';
-    
-        $.getJSON(file,{random:Math.random()},function(res){
-            $("p").addClass(res.p_indent);
-        })
-    }
-
-    // 列表浮动效果
-    $("#article_list").each(function(){
-        var _this = this;
-        var file = '../../data/blog.json';
-
-        $.getJSON(file,{random:Math.random()},function(res){
-            if(res.list_hover == 'None'){
+        $("p").addClass(arr_json.p_indent);
+        // 列表浮动效果
+        $("#article_list").each(function(){
+            if(arr_json.list_hover == 'None'){
             }else{
-                $("#article_list .box").addClass(res.list_hover).addClass('list_hover');
+                $("#article_list .box").addClass(arr_json.list_hover).addClass('list_hover');
             }
         })
-    })
+        // 访问统计、fork_me
+        var blog_name = arr_json.blog_name;
+        blog_name = arr_json.blog_name;
+        if(arr_json.fork_me != '-'){
+            var fork_me = '<a href="'+arr_json.github+'" target="_blank"><img src="/static/images/'+arr_json.fork_me+'.png"></a>';
+            $('.fork_me').html(fork_me);
+        }
+        b_color = arr_json.b_color;
+    
+        tz = 'md-Blog' + blog_name;
+
+        // 分页阴影
+        $(".page_bar li").each(function(){
+            var _this = $(this);
+            var file = '../../data/blog.json';
+
+            if(arr_json.page_hover == 'None'){
+            }else{
+                _this.addClass(arr_json.page_hover);
+            }
+        })
+
+        // 访客统计
+        var visitor = sessionStorage[tz];
+
+        if(visitor === undefined){
+            sessionStorage.setItem(tz,'Hello md-Blog.');
+            $.ajax({
+                type: "POST",
+                cache: false,
+                url: "../../set/api/click.php",
+                data: "add_visitor=add"
+            })
+        }
+    }
+
 
     // 访客读取
     $('#visitor_num').each(function(){
         var _this = this;
         var file = '../../data/visitor';
 
-        $.getJSON(file,{random:Math.random()},function(res){
+        $.getJSON(file,{},function(res){
             $('#visitor_num').text(res);
         })
     })
 
-    // 访问统计、fork_me
-    var blog_name = '';
-
-    $.getJSON('../../data/blog.json',{random:Math.random()},function(res){
-        blog_name = res.blog_name;
-        if(res.fork_me != '-'){
-            var fork_me = '<a href="'+res.github+'" target="_blank"><img src="/static/images/'+res.fork_me+'.png"></a>';
-            $('.fork_me').html(fork_me);
-        }
-        b_color = res.b_color;
-    })
-    tz = 'md-Blog' + blog_name;
-    var visitor = sessionStorage[tz];
-
-    if(visitor === undefined){
-        sessionStorage.setItem(tz,'Hello md-Blog.');
-        $.ajax({
-            type: "POST",
-            cache: false,
-            url: "../../set/api/click.php",
-            data: "add_visitor=add"
-        })
-    }
-
-    // 分页阴影
-    $(".page_bar li").each(function(){
-        var _this = $(this);
-        var file = '../../data/blog.json';
-
-        $.getJSON(file,{random:Math.random()},function(res){
-            if(res.page_hover == 'None'){
-            }else{
-                _this.addClass(res.page_hover);
-            }
-        })
-    })
 });

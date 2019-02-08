@@ -21,7 +21,16 @@
         color: #969696;
     }
     #blog_conf{
-        margin-top: 30px;
+        width: 80%;
+        margin:0 auto;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        background: #f6f6f6;
+    }
+    #blog_conf hr{
+        
+        margin-top: 3rem;
+        border-top:.1rem solid #ddd;
     }
     #list_demo,#page_demo{
         width:180px;
@@ -80,7 +89,7 @@
         color: #F60;
     }
     .qr_code{
-        width:80%;
+        width:70%;
     }
     </style>
 </head>
@@ -115,20 +124,20 @@
             <br>
             <div class="form-group">
                 <label for="arc_top_title" class="col-offset-2 col-2 form-label">置顶文章</label>
-                <div class="col-6">
+                <div class="col-5">
                     <input id="arc_top_title" name="arc_top_title" readonly class="form-field" type="text" />
                 </div>
                 <div class="col-1"><div id="arc_top_set" onclick="show_arc_top();get_arc();"><i class="fa fa-arrow-up fa-fw"></i> <span id="make_status">设置</span></div></div>
             </div>
             <div class="form-group">
                 <label for="blog_name" class="col-offset-2 col-2 form-label">博客名称</label>
-                <div class="col-3">
+                <div class="col-4">
                     <input id="blog_name" name="blog_name" class="form-field" type="text" />
                 </div>
             </div>
             <div class="form-group">
                 <label for="blog_info" class="col-offset-2 col-2 form-label">副标题</label>
-                <div class="col-3">
+                <div class="col-4">
                     <input id="blog_info" name="blog_info" class="form-field" type="text" />
                 </div>
             </div>
@@ -153,7 +162,7 @@
             <!-- 每页条数 -->
             <div class="form-group">
                 <label for="page_size" class="col-offset-2 col-2 form-label">每页条数</label>
-                <div class="col-1">
+                <div class="col-2">
                     <select id="page_size" name="page_size" class="form-field">
                         <option>2</option>
                         <option>4</option>
@@ -170,8 +179,8 @@
             </div>
             <!-- 主色调 -->
             <div class="form-group">
-                <label for="b_color" class="col-offset-2 col-2 form-label">主色调</label>
-                <div class="col-1">
+                <label for="b_color" class="col-offset-2 col-2 form-label">博客主色调</label>
+                <div class="col-2">
                     <select id="b_color" onchange="b_color_demo()" name="b_color" class="form-field">
                         <option value="red">红</option>
                         <option value="orange">橙</option>
@@ -256,33 +265,33 @@
             <!-- Coder -->
             <hr>
             <br>
-            <h3 class="tagc">Coder 设置</h3>
+            <h3 class="tagc">GitHub彩带 & 代码高亮设置</h3>
             <br>
             <br>
             <div class="form-group">
                 <label for="github" class="col-offset-2 col-2 form-label">GitHub 地址</label>
-                <div class="col-3">
+                <div class="col-4">
                     <input id="github" name="github" class="form-field" type="text" />
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="fork_me" class="col-offset-2 col-2 form-label">Fork me 彩带</label>
-                <div class="col-1">
+                <div class="col-2">
                     <select id="fork_me" name="fork_me" class="form-field">
                         <option>-</option>
-                        <option value="red">红</option>
-                        <option value="dark">黑</option>
-                        <option value="green">绿</option>
-                        <option value="orange">橙</option>
-                        <option value="white">白</option>
-                        <option value="gray">灰</option>
+                        <option value="red">红色</option>
+                        <option value="dark">黑色</option>
+                        <option value="green">绿色</option>
+                        <option value="orange">橙色</option>
+                        <option value="white">白色</option>
+                        <option value="gray">灰色</option>
                     </select>
                 </div>
             </div>
             <div class="form-group">
                 <label for="code_css" class="col-offset-2 col-2 form-label">代码样式</label>
-                <div class="col-3">
+                <div class="col-4">
                     <select id="code_css" onchange="cg_code_css()" name="code_css" class="form-field">
                         <option>a11y-dark</option>
                         <option>a11y-light</option>
@@ -380,7 +389,7 @@
                 <div class="col-offset-3 col-6">
                     <pre><code class="js">$(&quot;.line_num&quot;).each(function(){
     var now_num = $(&quot;.line_num&quot;).index(this) + 1;
-    $(this).text(now_num);
+    $(this).text(now_num); //我是注释
 })</code></pre>
                 </div>
             </div>
@@ -442,10 +451,38 @@
             </div>
             <div class="form-group bd_box">
                 <label for="bd_code" class="col-offset-2 col-2 form-label">脚本代码</label>
-                <div class="col-4">
+                <div class="col-5">
                     <textarea class="form-field" name="bd_code" id="bd_code" cols="10" rows="6"></textarea>
                 </div>
             </div>
+            <!-- Google Adsense -->
+            <hr>
+            <br>
+            <h3 class="tagc">谷歌广告联盟 Google Adsense</h3>
+            <br>
+            <br>
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-offset-1 col-3 form-label">是否开启谷歌广告联盟</label>
+                    <div class="col-3">
+                        <div class="radio inline">
+                            <input type="radio" name="gad_status" onclick="ck_gad(1)" id="gad_on" value="on" >
+                            <label for="gad_on">开启</label>
+                        </div>
+                        <div class="radio inline">
+                            <input type="radio" name="gad_status" onclick="ck_gad(0)" id="gad_off" value="off" >
+                            <label for="gad_off">关闭</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group gad_box">
+                <label for="gad_code" class="col-offset-2 col-2 form-label">脚本代码</label>
+                <div class="col-5">
+                    <textarea class="form-field" name="gad_code" id="gad_code" cols="10" rows="6"></textarea>
+                </div>
+            </div>
+            <!-- 打赏 -->
             <hr>
             <br>
             <h3 class="tagc">打赏设置（可添加两个收钱码，如：微信、支付宝）</h3>
@@ -462,7 +499,7 @@
                     <input type="hidden" name="wx_qrcode" id="val_wx_qrcode">
                 </div>
                 <div class="col-4">
-                    <div class="btn danger col-4" onclick="remove_wxqr()"><i class="fa fa-trash fa-fw"></i>清除打赏</div>
+                    <div class="btn danger col-5" onclick="remove_wxqr()"><i class="fa fa-trash fa-fw"></i>清除打赏</div>
                 </div>
             </div>
             <div class="form-group">
@@ -476,7 +513,7 @@
                     <input type="hidden" name="ali_qrcode" id="val_ali_qrcode">
                 </div>
                 <div class="col-4">
-                    <div class="btn danger col-4" onclick="remove_aliqr()"><i class="fa fa-trash fa-fw"></i>清除打赏</div>
+                    <div class="btn danger col-5" onclick="remove_aliqr()"><i class="fa fa-trash fa-fw"></i>清除打赏</div>
                 </div>
             </div>
             <div class="form-group">

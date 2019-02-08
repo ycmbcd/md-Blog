@@ -23,5 +23,8 @@ function make_search(){
     // 加载主题色
     $search_tpl = str_replace("{b_color}",$blog_conf['b_color'],$search_tpl);
 
+    // Google Adsense
+    $search_tpl = str_replace("{google_adsense}",$blog_conf['gad_code'],$search_tpl);
+
     write_file($file, $search_tpl);
 }

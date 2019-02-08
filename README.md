@@ -1,4 +1,8 @@
-![logo](https://raw.githubusercontent.com/ycmbcd/images_repo/master/md-blog/logo.png)
+<p align="center">
+    <a href="https://www.ycmbcd.com" target="_blank" rel="nofollow">
+        <img width="200" src="https://raw.githubusercontent.com/ycmbcd/images_repo/master/md-blog/logo.png">
+    </a>
+</p>
 
 # md-Blog
 [![](https://img.shields.io/github/license/ycmbcd/md-Blog.svg?style=flat)](https://opensource.org/licenses/MIT)

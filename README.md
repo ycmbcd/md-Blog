@@ -1,3 +1,5 @@
+![logo](https://raw.githubusercontent.com/ycmbcd/images_repo/master/md-blog/logo.png)
+
 # md-Blog
 [![](https://img.shields.io/github/license/ycmbcd/md-Blog.svg?style=flat)](https://opensource.org/licenses/MIT)
 [![](https://img.shields.io/badge/Downloads-click-brightgreen.svg)](https://github.com/ycmbcd/md-Blog/releases)
@@ -118,7 +120,7 @@ chown -R apache:apache * #在站点根目录执行
 * Snack &nbsp; https://github.com/nzbin/snack
 
 ## License
-![](https://img.shields.io/github/license/ycmbcd/md-Blog.svg?style=flat) MIT License
+[![](https://img.shields.io/github/license/ycmbcd/md-Blog.svg?style=flat)](https://opensource.org/licenses/MIT)
 
 ## 联系我
 ycmbcd@foxmail.com

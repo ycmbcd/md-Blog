@@ -1,9 +1,9 @@
-> 欢迎使用 md-Blog，本博客系统可以将 MarkDown 文件生成一个全静态页面的站点blog，且不需要数据库的依赖。注：本博客系统不提供 MarkDown编辑器 功能。
-
 # md-Blog
-![](https://img.shields.io/github/license/ycmbcd/md-Blog.svg?style=flat)
-![](https://img.shields.io/badge/Downloads-click-brightgreen.svg)
-![](https://img.shields.io/github/release/ycmbcd/md-Blog.svg?style=flat)
+[![](https://img.shields.io/github/license/ycmbcd/md-Blog.svg?style=flat)](https://opensource.org/licenses/MIT)
+[![](https://img.shields.io/badge/Downloads-click-brightgreen.svg)](https://github.com/ycmbcd/md-Blog/releases)
+[![](https://img.shields.io/github/release/ycmbcd/md-Blog.svg?style=flat)](https://github.com/ycmbcd/md-Blog/releases)
+
+> 欢迎使用 md-Blog，本博客系统可以将 MarkDown 文件生成一个全静态页面的站点blog，且不需要数据库的依赖。注：本博客系统不提供 MarkDown编辑器 功能。
 
 ## 演示（Demo）
 
@@ -118,7 +118,7 @@ chown -R apache:apache * #在站点根目录执行
 * Snack &nbsp; https://github.com/nzbin/snack
 
 ## License
-MIT License
+![](https://img.shields.io/github/license/ycmbcd/md-Blog.svg?style=flat) MIT License
 
 ## 联系我
 ycmbcd@foxmail.com

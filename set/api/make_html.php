@@ -27,6 +27,7 @@
         // 读取配置
         $json_string = file_get_contents('../../data/blog.json'); 
         $blog_conf = json_decode($json_string, true);
+
         if($blog_conf['cy_status'] == 'on'){
             $cy_appid = $blog_conf['cy_appid'];
             $cy_conf = $blog_conf['cy_conf'];
@@ -43,11 +44,20 @@ conf: \'{conf}\'
             $cy_comment = str_replace('{sid}', $md_id, $cy_comment);
             $cy_comment = str_replace('{appid}', $cy_appid, $cy_comment);
             $cy_comment = str_replace('{conf}', $cy_conf, $cy_comment);
+            $cy_comment = str_replace('{conf}', $cy_conf, $cy_comment);
             
         }else{
             $cy_comment = '&nbsp;';
         }
 
+        // 获取打赏配置
+        if($blog_conf['ali_qrcode'] == '' or $blog_conf['wx_qrcode'] == ''){
+        }else{
+            $ali_qrcode = '<div class="col-4 pay_item col-offset-1"><img src="'.$blog_conf['ali_qrcode'].'" /></div>';
+            $wx_qrcode = '<div class="col-4 pay_item col-offset-2"><img src="'.$blog_conf['wx_qrcode'].'" /></div>';
+        }
+        $pay_txt = '<br><h3 class="tagc pay_txt">'.$blog_conf['pay_txt'].'</h3><br>';
+        
         $c_time = date("Y-m-d H:i:s",$c_time);                
         $u_time = date("Y-m-d H:i:s",$u_time);                
         $blog = str_replace("{title}", $title, $blog);
@@ -61,5 +71,8 @@ conf: \'{conf}\'
         $blog = str_replace("{b_color}",$blog_conf['b_color'],$blog);
         $blog = str_replace("{side_list}", $side_list, $blog);
         $blog = str_replace("{article}", $article, $blog);
+        $blog = str_replace('{pay_txt}', $pay_txt, $blog);
+        $blog = str_replace('{ali_qrcode}', $ali_qrcode, $blog);
+        $blog = str_replace('{wx_qrcode}', $wx_qrcode, $blog);
         write_file($file_path, $blog); 
     }

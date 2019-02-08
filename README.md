@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://www.ycmbcd.com" rel="nofollow">
-        <img width="200" src="https://raw.githubusercontent.com/ycmbcd/images_repo/master/md-blog/logo.png">
+        <img width="240" src="https://raw.githubusercontent.com/ycmbcd/images_repo/master/md-blog/logo.png">
     </a>
 </p>
 
@@ -17,7 +17,7 @@
 
 ## 演示（Demo）
 
-https://www.ycmbcd.com
+[![demo](https://img.shields.io/badge/Demo-ycmbcd.com-brightgreen.svg)](https://www.ycmbcd.com) https://www.ycmbcd.com
 
 ## 特色
 

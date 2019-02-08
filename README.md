@@ -6,12 +6,12 @@
 
 # md-Blog
 [![licenses](https://img.shields.io/github/license/ycmbcd/md-Blog.svg?style=flat)](https://opensource.org/licenses/MIT)
-[![apache](https://img.shields.io/badge/Apache-v2.4.33-orange.svg)](http://www.apache.org/dyn/closer.cgi)
-[![nginx](https://img.shields.io/badge/Nginx-v1.14.2-red.svg)](http://nginx.org/)
+[![apache](https://img.shields.io/badge/Apache-%5E2.4.33-orange.svg)](http://www.apache.org/dyn/closer.cgi)
+[![nginx](https://img.shields.io/badge/Nginx-%5E1.14.2-red.svg)](http://nginx.org/)
 [![php](https://img.shields.io/badge/php-%5E5.0-blue.svg)](http://www.php.net/downloads.php)
-[![download](https://img.shields.io/badge/Downloads-click-brightgreen.svg)](https://github.com/ycmbcd/md-Blog/releases)
-[![release](https://img.shields.io/github/release/ycmbcd/md-Blog.svg?style=flat)](https://github.com/ycmbcd/md-Blog/releases)
 ![size](https://img.shields.io/github/languages/code-size/ycmbcd/md-Blog.svg?style=flat)
+[![release](https://img.shields.io/github/release/ycmbcd/md-Blog.svg?style=flat)](https://github.com/ycmbcd/md-Blog/releases)
+[![download](https://img.shields.io/badge/Downloads-click-brightgreen.svg)](https://github.com/ycmbcd/md-Blog/releases)
 
 > 欢迎使用 md-Blog，本博客系统可以将 MarkDown 文件生成一个全静态页面的站点blog，且不需要数据库的依赖。注：本博客系统不提供 MarkDown编辑器 功能。
 
@@ -38,8 +38,8 @@ https://www.ycmbcd.com
 
 ## 配置需求
 
-[![apache](https://img.shields.io/badge/Apache-v2.4.33-orange.svg)](http://www.apache.org/dyn/closer.cgi)
-[![nginx](https://img.shields.io/badge/Nginx-v1.14.2-red.svg)](http://nginx.org/)
+[![apache](https://img.shields.io/badge/Apache-%5E2.4.33-orange.svg)](http://www.apache.org/dyn/closer.cgi)
+[![nginx](https://img.shields.io/badge/Nginx-%5E1.14.2-red.svg)](http://nginx.org/)
 [![php](https://img.shields.io/badge/php-%5E5.0-blue.svg)](http://www.php.net/downloads.php)
 
 Apache / Nginx

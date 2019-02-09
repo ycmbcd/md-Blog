@@ -49,8 +49,13 @@ conf: \'{conf}\'
         }else{
             $cy_comment = '&nbsp;';
         }
+
         // Google Adsense
-        $gad = $blog_conf['gad_code'];
+        if($blog_conf['gad_status'] == 'on'){
+            $gad_code = $blog_conf['gad_code'];
+        }else{
+            $gad_code = '';
+        }
 
         // 获取打赏配置
         if($blog_conf['ali_qrcode'] == '' or $blog_conf['wx_qrcode'] == ''){
@@ -63,7 +68,7 @@ conf: \'{conf}\'
         $c_time = date("Y-m-d H:i:s",$c_time);                
         $u_time = date("Y-m-d H:i:s",$u_time);                
         $blog = str_replace("{title}", $title, $blog);
-        $blog = str_replace("{google_adsense}", $gad, $blog);   // Google Adsense
+        $blog = str_replace("{google_adsense}", $gad_code, $blog);   // Google Adsense
         $blog = str_replace("{c_time}", $c_time, $blog);
         $blog = str_replace("{u_time}", $u_time, $blog);
         $blog = str_replace("{cy_comment}", $cy_comment, $blog);  // 畅言评论

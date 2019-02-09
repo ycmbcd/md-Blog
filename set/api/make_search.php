@@ -24,7 +24,12 @@ function make_search(){
     $search_tpl = str_replace("{b_color}",$blog_conf['b_color'],$search_tpl);
 
     // Google Adsense
-    $search_tpl = str_replace("{google_adsense}",$blog_conf['gad_code'],$search_tpl);
+    if($blog_conf['gad_status'] == 'on'){
+        $gad_code = $blog_conf['gad_code'];
+    }else{
+        $gad_code = '';
+    }
+    $search_tpl = str_replace("{google_adsense}",$gad_code,$search_tpl);
 
     write_file($file, $search_tpl);
 }

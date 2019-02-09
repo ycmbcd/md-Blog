@@ -42,7 +42,12 @@
         $index_tpl = str_replace("{b_color}",$blog_conf['b_color'],$index_tpl);
 
         // Google Adsense
-        $index_tpl = str_replace("{google_adsense}",$blog_conf['gad_code'],$index_tpl);
+        if($blog_conf['gad_status'] == 'on'){
+            $gad_code = $blog_conf['gad_code'];
+        }else{
+            $gad_code = '';
+        }
+        $index_tpl = str_replace("{google_adsense}",$gad_code,$index_tpl);
 
         del_dir('../../index/');
         make_dir('../../index/');

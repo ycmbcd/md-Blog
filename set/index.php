@@ -26,7 +26,7 @@
         // 生成页头
         make_header($blog_conf, '../');
         echo 'ok';
-        return flase;
+        return false;
     }
 
     if(isset($_POST['login'])){
@@ -39,7 +39,7 @@
             // 缓存
             $_SESSION['md-Blog'] = 1;
         }
-        return flase;
+        return false;
     }
 
     if(isset($_POST['is_login'])){

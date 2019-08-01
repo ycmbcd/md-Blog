@@ -23,7 +23,7 @@ $(function(){
         setTimeout(() => {
             var now_num = $(this).find("li").length;
             var copy_btn = '<div onclick="copy_code(\'copy_'+index+'\')" class="copy_btn" data-clipboard-action="copy" data-clipboard-target="#copy_code"><i class="fa fa-clipboard fa-fw"></i>Copy<div>';
-            $(this).find('.code_bar').html(now_num + '&nbsp;lines' + copy_btn);            
+            $(this).find('.code_bar').html(copy_btn);            
         }, 100);
     });
 

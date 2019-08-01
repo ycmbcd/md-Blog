@@ -87,7 +87,7 @@
             echo '<br>';
             // 生成摘要
             $html = file_get_contents('../../'.$now_path);
-            $arc_arr = explode('<hr class="b-line">',$html);
+            $arc_arr = explode(' <span style="display: none;">不要删除</span>',$html);
             $arc_info = strip_tags(stripslashes($arc_arr[1]));
             $arc_info = trim($arc_info);
             $arc_info = mb_strcut($arc_info,0,420,'utf-8');

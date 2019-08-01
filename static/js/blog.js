@@ -18,13 +18,8 @@ $(function(){
 
     // code 行号
     $('pre code').each(function(index){
-        $(this).html("<div class=\"code_bar\"></div><ol id=\"copy_"+index+"\"><span class=\"line_num\"></span><li>" + $(this).html().replace(/\n/g,"\n</li><span class=\"line_num\"></span><li>") +"\n</li></ol>");
-        
-        setTimeout(() => {
-            var now_num = $(this).find("li").length;
-            var copy_btn = '<div onclick="copy_code(\'copy_'+index+'\')" class="copy_btn" data-clipboard-action="copy" data-clipboard-target="#copy_code"><i class="fa fa-clipboard fa-fw"></i>Copy<div>';
-            $(this).find('.code_bar').html(copy_btn);            
-        }, 100);
+        $(this).html("<ol id=\"copy_"+index+"\"><span class=\"line_num\"></span><li>" + $(this).html().replace(/\n/g,"\n</li><span class=\"line_num\"></span><li>") +"\n</li></ol>");
+        $(this).parent().append('<div class=\"code_bar\"><div onclick="copy_code(\'copy_'+index+'\')" class="copy_btn" data-clipboard-action="copy" data-clipboard-target="#copy_code"><i class="fa fa-clipboard fa-fw"></i>Copy<div></div>');
     });
 
     var clipboard = new ClipboardJS('.copy_btn');

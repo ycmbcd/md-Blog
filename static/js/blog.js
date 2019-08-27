@@ -60,4 +60,29 @@ $(function(){
         })
     }, 100);
 
+    // right_nav 右侧悬浮文章导航
+    var right_nav = '';
+    $('#blog_body h1').each(function(e){
+        e = e + 1;
+        $(this).attr('id', 'bt_' + e);
+        // $(this).attr('name', 'bt_' + e);
+        right_nav = right_nav + '<li class="box"><a class="right_nav_item" href="#bt_' + e + '"> ' + $(this).text() + '</a></li>';
+    })
+    if(right_nav !== ''){
+        right_nav = '<br><div id="right_nav" class="b-box boxes">' + right_nav + '</div>';
+        setTimeout(function(){
+            // 追加到右侧栏
+            $('.side_list').append(right_nav);
+            // 钉住
+            $('#right_nav').pin({minWidth: 940, padding:{top: 20}});
+            // 平滑滚动
+            $('.right_nav_item').click(function () {
+                $('html, body').animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 500);
+                return false;
+            });
+
+        }, 300);
+    }
 });

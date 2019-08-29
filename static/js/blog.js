@@ -82,7 +82,12 @@ $(function(){
                 }, 500);
                 return false;
             });
-
+            var pin_height = $('.pin-wrapper').height();
+            var win_height = $(window).height();
+            var right_height = win_height - 50;
+            if(pin_height > win_height){
+                $('#right_nav').css({'height': right_height, 'overflow': 'auto'});
+            }
         }, 300);
     }
 });

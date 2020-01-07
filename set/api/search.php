@@ -22,8 +22,8 @@
                         </h4>
                     </div>
                     <div class="f_right">
-                    <h5>分类：'.$item['list_name'].'<br>
-                    创建日期：'.$c_time.'</h5></div>
+                    分类：'.$item['list_name'].'<br>
+                    创建日期：'.$c_time.'</div>
                     <div class="clear"></div>
                 </div>
                 <hr>';

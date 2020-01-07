@@ -81,7 +81,7 @@ a:hover{
     background: #FFF;
 }
 .search_txt{
-    margin-left: 2rem;
+    margin-left: 1rem;
     width: 70%;
 }
 .search_btn{
@@ -410,4 +410,8 @@ pre{
 #blog_body ul li{
     list-style-type: disc;
     margin-left: 2rem;
+}
+.bd_search_btn{
+    padding-top: 6px;
+    margin: -4px;
 }

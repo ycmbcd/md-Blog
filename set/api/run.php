@@ -33,6 +33,9 @@
         // 新建目录
         make_dir('../../blog');
 
+        // 新建存放html目录
+        make_dir('../../blog/html');
+
         // 生成页头
         make_header($blog_conf, '../../');
 

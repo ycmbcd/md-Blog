@@ -2,7 +2,7 @@
 
     // 生成 HTML
     function make_html($md_dir, $md_id, $title, $list_id, $list_name, $c_time, $u_time){
-        $file_path = "../../blog/".$list_id."/".$md_id.".html";
+        $file_path = "../../blog/html/".$md_id.".html";
 
         // 替换md 图片地址
         $img_src = '/md/'.$list_name.'/';
@@ -17,9 +17,6 @@
 
         // 读取 header.html
         $header = read_file("../../blog/header.html");
-
-        // 读取 footer.html
-        $footer = read_file("../../blog/footer.html");
 
         // 读取 blog.htm
         $blog = read_file("../../tpl/blog.htm");
@@ -75,7 +72,6 @@ conf: \'{conf}\'
         $blog = str_replace("{list_name}", $list_name, $blog); 
         $blog = str_replace("{code_css}", $blog_conf['code_css'], $blog);
         $blog = str_replace("{header}", $header, $blog);
-        $blog = str_replace("{footer}", $footer, $blog);
         $blog = str_replace("{b_color}",$blog_conf['b_color'],$blog);
         $blog = str_replace("{side_list}", $side_list, $blog);
         $blog = str_replace("{article}", $article, $blog);

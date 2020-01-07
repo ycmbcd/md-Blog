@@ -36,7 +36,7 @@
                             $md_arr[$md_id]['list_name'] = str_replace('../../md/', '', $dir);
                             $md_arr[$md_id]['md_dir'] = $temp;
                             $md_arr[$md_id]['id'] = $file_ctime.rand(1000,9999);
-                            $now_url = '/blog/'.$list_id.'/'.$md_arr[$md_id]['id'].'.html';
+                            $now_url = '/blog/html/'.$md_arr[$md_id]['id'].'.html';
                             $md_arr[$md_id]['url'] = $now_url;
                             $md_id = $md_id + 1;
                         }
@@ -59,7 +59,7 @@
 
                     if($md_val['md_dir'] === $o_val['md_dir']){   // 如果存在该 md
                         $now_item['title'] = $md_val['title'];  // 更新标题
-                        $now_item['url'] = '/blog/'.$md_val['list_id'].'/'.$o_val['id'].'.html';    // 更新 URL
+                        $now_item['url'] = '/blog/html/'.$o_val['id'].'.html';    // 更新 URL
                         $now_item['list_id'] = $md_val['list_id'];  // 更新 list_id
                         $now_item['file_mtime'] = $md_val['file_mtime'];    // 更新更新时间
                         $now_item['file_ctime'] = $o_val['file_ctime']; // 创建时间保留
@@ -82,7 +82,7 @@
         // 生成 html
         foreach($b_list as $key => $item){
             make_html($item['md_dir'], $item['id'], $item['title'], $item['list_id'], $item['list_name'], $item['file_ctime'], $item['file_mtime']);
-            $now_path = '/blog/'.$item['list_id'].'/'.$item['id'].'.html';
+            $now_path = '/blog/html/'.$item['id'].'.html';
             echo '[ok] 生成 blog:《'.$item['title'].'》=> '.$now_path;
             echo '<br>';
             // 生成摘要

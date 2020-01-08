@@ -82,16 +82,34 @@ a:hover{
 }
 .search_txt{
     margin-left: 1rem;
-    width: 70%;
+    width: 90%;
 }
 .search_btn{
+    margin-left: 1rem;
+    margin-top: .6rem;
+    font-size: 1rem;
+    border: .1rem solid #9bcfff;
+    padding: .4rem 1rem;
+    border-radius: .3rem;
+    background: #FFF;
+    color: #348fe2;
+    width: 7rem;
+}
+.search_btn:hover{
+    background: #9bcfff;
+    color: #FFF !important;
+}
+.bd_search_btn{
+    margin-top: .8rem;
     margin-left: .8rem;
-    cursor: pointer;
-    margin-top:.4rem;
-    color: #a9a9a9;
-    font-size: 1.4rem;
-    background: none;
-    border:none;
+}
+.bd_search_txt{
+    margin-top: 1.2rem;
+    font-size: 1.1rem;
+    color: #676767;
+}
+.bd_search_txt:hover{
+    text-decoration: underline;
 }
 .header{
     height: 16rem;
@@ -410,8 +428,4 @@ pre{
 #blog_body ul li{
     list-style-type: disc;
     margin-left: 2rem;
-}
-.bd_search_btn{
-    padding-top: 6px;
-    margin: -4px;
 }

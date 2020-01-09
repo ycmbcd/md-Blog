@@ -1,3 +1,10 @@
+$(document).keypress(function(e) {
+    // 回车登录
+    if(e.which == 13){
+        login_blog();
+    }
+})
+
 function save_init(){
     var blog_pwd = $("#blog_pwd").val();
     $.post("./index.php",{pwd:blog_pwd},function(res){

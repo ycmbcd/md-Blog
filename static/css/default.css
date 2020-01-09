@@ -20,38 +20,15 @@ h1 small{
 a:hover{
     text-shadow: .16rem .16rem .16rem #d1d1d1;
 }
-@media(max-width: 576px){
-    .container{
-        padding-left:0 !important;
-        padding-right:0 !important;
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-    }
-    .box{
-        padding: 1rem;
-        text-align: left;
-    }
-    .box_title{
-        font-size: 1.4rem !important;
-        line-height: 2.0rem !important;
-        margin-bottom:1.3rem;
-    }
-    .fork_me img{
-        width: 30%;
-        position: fixed;
-        top: 0;
-        right: 0;
-        z-index: 101;
-    }
-    .box_info{
-        line-height: 2rem !important;
-    }
-}
+
 .fork_me{
     position: fixed;
     top: 0;
     right: 0;
     z-index: 101;
+}
+small, .small{
+    font-size: 44%;
 }
 .pointer{
     cursor: pointer;
@@ -133,8 +110,9 @@ a:hover{
     margin-top: 2rem;
 }
 .gray{
-    color: #a9a9a9;
-    font-weight: 400;
+    color: #737373;
+    font-weight: 300;
+    font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei";
 }
 .tagc{
     text-align: center;
@@ -209,17 +187,16 @@ a:hover{
     border: 1px solid #eaeaea;
 }
 .box_title{
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-    line-height: 3rem;
     margin-bottom: 2.4rem;
 }
 
 .box_info{
     height: 6rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     overflow: hidden;
-    color: #2a2a2a;
+    color: #4c4c4c;
     margin-bottom: 1.4rem;
     line-height: 2rem;
 }
@@ -266,11 +243,13 @@ pre{
     margin-left:0;
     padding:1.4rem 2rem 0.7rem 2rem;
     border-radius: .2rem;
+    font-size: 90%;
 }
 .hljs ol li{
     height: 1.6rem;
     list-style-type: none !important;
 }
+
 .hljs ol li:before{
     content:"";
     counter-increment:none;
@@ -428,4 +407,52 @@ pre{
 #blog_body ul li{
     list-style-type: disc;
     margin-left: 2rem;
+}
+.scroll_top{
+    display: none;
+    position: fixed;
+    right: 3%;
+    bottom: 3%;
+    width: 4rem;
+    height: 4rem;
+    line-height: 5.5rem;
+    color: rgb(131, 131, 131);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3rem;
+    box-shadow: 0 0 .5rem rgb(218, 218, 218);
+    background: rgba(255, 255, 255, .3);
+}
+.scroll_top:hover{
+    box-shadow: 0 0 .8rem rgb(175, 175, 175);
+}
+@media(max-width: 576px){
+    .container{
+        padding-left:0 !important;
+        padding-right:0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .box{
+        padding: 1rem;
+        text-align: left;
+    }
+    .box_title{
+        font-size: 1.4rem !important;
+        margin-bottom:1.3rem;
+    }
+    .fork_me img{
+        width: 30%;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 101;
+    }
+    .box_info{
+        line-height: 2rem !important;
+    }
+    .hljs ol li{
+        height: auto;
+        list-style-type: none !important;
+    }
 }

@@ -113,7 +113,7 @@
         <p>Powered by <a target='_blank' href='https://github.com/ycmbcd/md-Blog'> md-Blog</a></p></body>
         </html>";
         write_file('../../Sitemap.html', $site_map);
-        echo '[ok] 生成网站地图<br>';
+        echo '[ok] 生成网站地图 [../../Sitemap.html]<br>';
         // 保存到 list.json
         $json = json_encode($b_list);
         write_file('../../data/list.json', $json);

@@ -288,11 +288,14 @@ pre{
     border: .1rem solid #f8f8f8;
     padding: .3rem .6rem;
     cursor: pointer;
-    color: #999;
+    color: #848484;
     font-size: 1rem;
+    margin: 1px;
+    border-top-right-radius: .3rem;
 }
 .code_bar:hover{
-    color: #348fe2;
+    color: #FFF;
+    background-color: #999;
 }
 .copy_btn{
     float: right;

@@ -79,6 +79,20 @@
         // 根据最后修改时间排序
         array_multisort(array_column($b_list,'file_mtime'),SORT_DESC,$b_list);
 
+        // 生成站点地图
+        $site_map = "<!DOCTYPE html><html><head><meta charset='utf-8' /><title>网站地图</title><style>a{color:rgb(0, 0, 238);font-size:13px;}</style></head><body><ol>";
+
+        // https 还是 http 判断
+
+        $now_http = '';
+        if ( !empty($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) !== 'off') {
+            $now_http = 'https://';
+        } elseif ( isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ) {
+            $now_http = 'https://';
+        } elseif ( !empty($_SERVER['HTTP_FRONT_END_HTTPS']) && strtolower($_SERVER['HTTP_FRONT_END_HTTPS']) !== 'off') {
+            $now_http = 'http://';
+        }
+
         // 生成 html
         foreach($b_list as $key => $item){
             make_html($item['md_dir'], $item['id'], $item['title'], $item['list_id'], $item['list_name'], $item['file_ctime'], $item['file_mtime']);
@@ -92,8 +106,14 @@
             $arc_info = trim($arc_info);
             $arc_info = mb_strcut($arc_info,0,420,'utf-8');
             $b_list[$key]['arc_info'] = $arc_info;
-        } 
-
+            // 站点地图
+            $site_map = $site_map."<li><a href='".$now_http.$_SERVER['SERVER_NAME'].$now_path."'>".$item['title']."</a></li>";
+        }
+        $site_map = $site_map."</ol>
+        <p>Powered by <a target='_blank' href='https://github.com/ycmbcd/md-Blog'> md-Blog</a></p></body>
+        </html>";
+        write_file('../../Sitemap.html', $site_map);
+        echo '[ok] 生成网站地图<br>';
         // 保存到 list.json
         $json = json_encode($b_list);
         write_file('../../data/list.json', $json);

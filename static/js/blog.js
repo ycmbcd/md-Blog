@@ -19,7 +19,7 @@ $(function(){
     // code 行号
     $('pre code').each(function(index){
         $(this).html("<ol id=\"copy_"+index+"\"><span class=\"line_num\"></span><li>" + $(this).html().replace(/\n/g,"\n</li><span class=\"line_num\"></span><li>") +"\n</li></ol>");
-        $(this).parent().append('<div class=\"code_bar\"><div onclick="copy_code(\'copy_'+index+'\')" class="copy_btn" data-clipboard-action="copy" data-clipboard-target="#copy_code"><i class="fa fa-clipboard fa-fw"></i>Copy<div></div>');
+        $(this).parent().append('<div onclick="copy_code(\'copy_'+index+'\')" class=\"code_bar\"><div class="copy_btn" data-clipboard-action="copy" data-clipboard-target="#copy_code"><i class="fa fa-clipboard fa-fw"></i>复制<div></div>');
     });
 
     var clipboard = new ClipboardJS('.copy_btn');
@@ -50,6 +50,12 @@ $(function(){
             var now_url = window.location.pathname;
             var now_id = now_url.match(/\/\d+.html$/g).toString().replace(/\//,'').replace(/.html/,'');
             var file = '../../data/click/'+now_id;
+            // 访问+1效果
+            $('.click_number').parent().css({'position':'relative'}).append('<div id="add_one_view" style="color: red;font-size: 6rem;position: absolute;right: 0rem;bottom:-1rem;font-weight: bold;display:none">+1</div>');
+            $('#add_one_view').fadeIn('800');
+            setTimeout(()=>{
+                $('#add_one_view').animate({'fontSize': '1rem','bottom':'0.1rem'},800).fadeOut('500');
+            }, 500)
             $.getJSON(file,{random:Math.random()},function(res){
                 o_num = res - 1;
                 _this.text('浏览：' + o_num);
@@ -58,7 +64,7 @@ $(function(){
                 }, 1000);
             })
         })
-    }, 100);
+    }, 500);
 
     // right_nav 右侧悬浮文章导航
     var right_nav = '';

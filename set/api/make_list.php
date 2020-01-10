@@ -42,7 +42,7 @@
             $bd_code = '<li class="box b-info"><a href="http://tongji.baidu.com" target="_blank" rel="nofollow noopener">百度统计</a>'.$blog_conf['bd_code'].'</li>';
         }
         if($blog_conf['blog_ipc'] !== ''){
-            $blog_ipc = '<li class="box b-info"><a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow noopener">'.$blog_conf['blog_ipc'].'</a></li>';
+            $blog_ipc = '<li class="box b-info"><a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">'.$blog_conf['blog_ipc'].'</a></li>';
         }
         if($bd_code == '' and $blog_ipc == ''){
             $b_info = '';

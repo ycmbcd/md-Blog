@@ -73,7 +73,7 @@
             function bd_search(){
                 var bd_txt = document.getElementById("bd_txt").value;
                 var site_url = window.location.host;
-                window.open("https://www.baidu.com/s?wd=inurl:"+site_url+" "+bd_txt);
+                window.open("https://www.baidu.com/s?wd=site:"+site_url+" "+bd_txt);
             }
         </script>
         <br>

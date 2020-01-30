@@ -60,16 +60,17 @@ class Parser
         array('shtml', 20),
         array('pre', 30),
         array('ahtml', 40),
-        array('list', 50),
-        array('math', 60),
-        array('html', 70),
-        array('footnote', 80),
-        array('definition', 90),
-        array('quote', 100),
-        array('table', 110),
-        array('sh', 120),
-        array('mh', 130),
-        array('hr', 140),
+        array('shr', 50),
+        array('list', 60),
+        array('math', 70),
+        array('html', 80),
+        array('footnote', 90),
+        array('definition', 100),
+        array('quote', 110),
+        array('table', 120),
+        array('sh', 130),
+        array('mh', 140),
+        array('dhr', 150),
         array('default', 9999)
     );
 
@@ -437,7 +438,7 @@ class Parser
                 )) {
                     return $self->makeHolder($matches[0]);
                 } else {
-                    return htmlspecialchars($matches[0]);
+                    return $self->makeHolder(htmlspecialchars($matches[0]));
                 }
             },
             $text
@@ -1090,9 +1091,27 @@ class Parser
      * @param $line
      * @return bool
      */
-    private function parseBlockHr($block, $key, $line)
+    private function parseBlockShr($block, $key, $line)
     {
-        if (preg_match("/^[-\*]{3,}\s*$/", $line)) {
+        if (preg_match("/^(\* *){3,}\s*$/", $line)) {
+            $this->startBlock('hr', $key)
+                ->endBlock();
+
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * @param $block
+     * @param $key
+     * @param $line
+     * @return bool
+     */
+    private function parseBlockDhr($block, $key, $line)
+    {
+        if (preg_match("/^(- *){3,}\s*$/", $line)) {
             $this->startBlock('hr', $key)
                 ->endBlock();
 

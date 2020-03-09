@@ -99,7 +99,14 @@
         <div class="header"></div>
         <div class="row">
             <div class="col-offset-10">
-                <div class="tagr gray pointer" onclick="logout()"><i class="fa fa-sign-out"></i> 安全退出</div>
+                <a href="#">
+                    <div class="tagr gray pointer f_right" onclick="logout()"><i class="fa fa-sign-out"></i> 安全退出</div>
+                </a>
+                <a href="/Sitemap.html" target="_blank">
+                <div class="tagr gray pointer f_right">
+                    <i class="fa fa-sitemap"></i> 站点地图&nbsp;&nbsp;</div>
+                </a>
+                <div class="clear"></div>
             </div>
         </div>
         <hr style="margin:0 0 3rem 0;">
@@ -227,7 +234,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="page_hover" class="col-offset-2 col-2 form-label">列表浮动效果</label>
+                <label for="page_hover" class="col-offset-2 col-2 form-label">分页浮动效果</label>
                 <div class="col-3">
                     <select id="page_hover" onchange="page_demo()" name="page_hover" class="form-field">
                         <option>None</option>

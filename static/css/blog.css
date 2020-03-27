@@ -60,3 +60,9 @@ p{
     margin-top: .5rem;
     box-shadow: 0 0 4rem #9E9E9E;
 }
+#spotlight{
+    background: rgba(0,0,0,.7) !important;
+}
+#spotlight.menu .header {
+    transform: translateY(-60px) !important;
+}

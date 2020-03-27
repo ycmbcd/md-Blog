@@ -21,6 +21,11 @@ a:hover{
     text-shadow: .16rem .16rem .16rem #d1d1d1;
 }
 
+/* remove changy_ad  */
+#pop_ad,.wrap-picture-show-gw,.action-from-gw,.section-service-w{
+    display: none;
+}
+
 .fork_me{
     position: fixed;
     top: 0;
@@ -91,7 +96,7 @@ small, .small{
 .header{
     height: 16rem;
     background: #ffffff;
-    margin-top: 4rem;
+    margin-top: 5rem;
 }
 .header_hr{
     margin-bottom: 4rem;
@@ -188,7 +193,6 @@ small, .small{
 }
 .box_title{
     font-size: 1.6rem;
-    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
     margin-bottom: 2.4rem;
 }
 
@@ -227,6 +231,7 @@ pre{
     word-break:break-all;
     margin: 1.6rem 0;
     position: relative;
+    border-radius: .6rem;
 }
 
 .hljs {
@@ -241,9 +246,9 @@ pre{
 }
 .hljs ol {
     margin-left:0;
-    padding: 2.4rem 2rem 1rem 2rem;
+    padding: 2.2rem 2rem 1rem 2rem;
     border-radius: .2rem;
-    font-size: 90%;
+    font-size: 100%;
 }
 .hljs ol li{
     height: 1.6rem;
@@ -255,7 +260,7 @@ pre{
     counter-increment:none;
 }
 .hljs ol li:last-child{
-    height: 2.8rem;
+    height: 3rem;
 }
 .line_num{
     text-align: right;
@@ -284,14 +289,14 @@ pre{
     top: 0;
     right: 0;
     background: #FFF;
-    border-bottom-left-radius: .4rem;
+    border-bottom-left-radius: .6rem;
     border: .1rem solid #f8f8f8;
     padding: .3rem .6rem;
     cursor: pointer;
     color: #848484;
     font-size: 1rem;
     margin: 1px;
-    border-top-right-radius: .3rem;
+    border-top-right-radius: .6rem;
 }
 .code_bar:hover{
     color: #FFF;
@@ -381,6 +386,7 @@ pre{
     border-bottom: .1rem solid #eaecef;
     padding-bottom: 1rem;
     margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 #blog_body h3,#blog_body h4,#blog_body h5,#blog_body h6{
     line-height: 2rem;

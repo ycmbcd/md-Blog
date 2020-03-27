@@ -46,7 +46,7 @@ $(function(){
 
     setTimeout(() => {
         $('.click_number').each(function(){
-            var _this = $(this);
+            var _this = $(this);  
             var now_url = window.location.pathname;
             var now_id = now_url.match(/\/\d+.html$/g).toString().replace(/\//,'').replace(/.html/,'');
             var file = '../../data/click/'+now_id;
@@ -96,4 +96,16 @@ $(function(){
             }
         }, 300);
     }
+    
+    setTimeout(function(){
+        $('#pop_ad,.wrap-picture-show-gw,.action-from-gw,.section-service-w').remove();
+    }, 1000)
+
+    // 图片预览
+    $('#blog_body img').each(function(){
+        var src = $(this).attr('src');
+        $(this).wrapAll('<a class="spotlight" href="'+src+'"></a>')
+        console.log(this)
+    })
+
 });

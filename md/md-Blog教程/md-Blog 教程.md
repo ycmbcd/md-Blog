@@ -96,7 +96,7 @@ chown -R apache:apache * #在站点根目录执行
 1. 您可以在 `/tpl`,`/static` 目录中对博客模板样式进行开发；
 2. 集成 JQuery，`/static/lib/jquery-3.3.1.min.js`；
 3. 集成 Font-Awesome 图标库， `/static/lib/font-awesome-4.7.0/css/font-awesome.min.css`；
-3. 响应式 UI 集成 snack， `/static/lib/snack.min.css` 参考：https://nzbin.github.io/snack/。
+3. 响应式 UI 集成 snack， `/static/lib/snack.min.css` 参考：https://snack-ui.github.io/snack/。
 
 # 鸣谢
 

@@ -19,6 +19,11 @@
 
 [![demo](https://img.shields.io/badge/Demo-ycmbcd.com-brightgreen.svg)](https://www.ycmbcd.com) https://www.ycmbcd.com
 
+# 说明文档
+
+具体安装配置教程可参考此文档：
+https://www.ycmbcd.com/wiki/
+
 ## 特色
 
 1. 支持文章付款码、二维码打赏功能（例：`微信`、`支付宝`）；

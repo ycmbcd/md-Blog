@@ -21,7 +21,7 @@
         }
 
         // 根据目录创建时间排序
-        array_multisort(array_column($dir_names,'ctime'),SORT_ASC,$dir_names);
+        array_multisort(array_column($dir_names,'ctime'),SORT_DESC,$dir_names);
 
         // 创建目录
         for($i=0;$i<$index;$i++){

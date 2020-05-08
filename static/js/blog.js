@@ -108,4 +108,75 @@ $(function(){
         console.log(this)
     })
 
+    // 视频播放
+    var v_blog_html = $('#blog_body').html();
+    var video_pre = '<video controls="controls" src="';
+    var video_next = '">【抱歉】您的浏览器不支持视频播放，请更换浏览器。</video>';
+    var v_reg_pre = '&lt;md-video&gt;';
+    var v_reg_next = '&lt;/md-video&gt;';
+    var v_new_html = v_blog_html.replace(new RegExp(v_reg_pre, 'g'), video_pre);
+    v_new_html = v_new_html.replace(new RegExp(v_reg_next, 'g'), video_next);
+    $('#blog_body').html(v_new_html);
+
+    $('video').each(function(){
+        var _this = $(this);
+
+        // 读取视频参数
+        var v_src = _this.attr('src').replace(/\s*/g, '');
+        v_arr = v_src.split(',');
+
+        // 设置视频地址
+        if(v_src.toString().indexOf('http') !== -1){    // 如果是网络地址
+            var v_src_url = v_arr[0].replace('<code>', '');
+            v_src_url = v_src_url.replace('</code>', '');
+            _this.attr('src', v_src_url);
+        }else{
+            _this.attr('src', $('#md_src').text() + v_arr[0]);
+        }
+
+        // 设置视频宽度
+        _this.css('width', v_arr[1]+'%');
+
+        // 设置视频自动播放
+        if(v_arr[2] == 'auto'){
+            document.getElementsByTagName('video')[i].play();
+        }
+    })
+
+    // 音频播放
+    var a_blog_html = $('#blog_body').html();
+    var audio_pre = '<audio controls="controls" src="';
+    var audio_next = '">【抱歉】您的浏览器不支持音频播放，请更换浏览器。</audio>';
+    var a_reg_pre = '&lt;md-audio&gt;';
+    var a_reg_next = '&lt;/md-audio&gt;';
+    var a_new_html = a_blog_html.replace(new RegExp(a_reg_pre, 'g'), audio_pre);
+    a_new_html = a_new_html.replace(new RegExp(a_reg_next, 'g'), audio_next);
+    $('#blog_body').html(a_new_html);
+
+    $('audio').each(function(i){
+        var _this = $(this);
+
+        // 读取音频参数
+        var a_src = _this.attr('src').replace(/\s*/g, '');
+        a_arr = a_src.split(',');
+
+        // 设置音频地址
+        if(a_src.toString().indexOf('http') !== -1){    // 如果是网络地址
+            var a_src_url = a_arr[0].replace('<code>', '');
+            a_src_url = a_src_url.replace('</code>', '');
+            _this.attr('src', a_src_url);
+        }else{
+            _this.attr('src', $('#md_src').text() + a_arr[0]);
+        }
+
+        // 设置循环
+        if(a_arr[1] == 'loop'){
+            _this.attr('loop', 'loop');
+        }
+
+        // 设置视频自动播放
+        if(a_arr[2] == 'auto'){
+            document.getElementsByTagName('audio')[i].play();
+        }
+    })
 });

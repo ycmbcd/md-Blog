@@ -66,3 +66,12 @@ p{
 #spotlight.menu .header {
     transform: translateY(-60px) !important;
 }
+
+video{
+    width: 100%;
+}
+@media screen and (max-width: 600px) {
+    video{
+        width: 100% !important;
+    }
+}

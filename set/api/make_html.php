@@ -11,9 +11,13 @@
         $to = "$1".$img_src;
         $str = preg_replace($replace, $to, $markdown);
 
+        // 资源路径获取
+        $md_src = str_replace($title.'.md', '', $md_dir);
+        $md_src = '<div id="md_src" style="display:none;">'.$md_src.'</div>';
+
         // 生成 html
         $parser = new HyperDown\Parser;
-        $article = $parser->makeHtml($str);
+        $article = $parser->makeHtml($str).'<br/>'.$md_src;
 
         // 读取 header.html
         $header = read_file("../../blog/header.html");

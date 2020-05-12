@@ -236,7 +236,7 @@ pre{
     border: none;
     word-wrap: break-word;
     word-break:break-all;
-    margin: 1.4rem 0 2rem 0;
+    margin: 2rem 0 2rem 0;
     position: relative;
     border-radius: .2rem;
     box-shadow: 0 0 1px #424242;
@@ -292,7 +292,7 @@ pre{
     position: absolute;
     top: 0;
     right: 0;
-    padding: .3rem .6rem;
+    padding: .15rem .3rem;
     cursor: pointer;
     color: #a7a7a7;
     font-size: 1rem;
@@ -303,6 +303,7 @@ pre{
 }
 .copy_btn{
     float: right;
+    text-shadow: -1px 1px 1px #ffffff;
 }
 .copy_btn:after{
     clear: both;
@@ -385,7 +386,7 @@ pre{
     border-bottom: .1rem solid #eaecef;
     padding-bottom: 1rem;
     margin-top: 3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 #blog_body h3,#blog_body h4,#blog_body h5,#blog_body h6{
     line-height: 2rem;

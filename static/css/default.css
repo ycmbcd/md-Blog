@@ -3,7 +3,7 @@
     padding:0;
 }
 body{
-    font-family: -apple-system,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif;
+    font-family: '微软雅黑',STXihei,Verdana,Calibri,Helvetica,Arial,sans-serif;
     background: #f5f5f5;
 }
 
@@ -19,6 +19,12 @@ h1 small{
 
 a:hover{
     text-shadow: .16rem .16rem .16rem #d1d1d1;
+}
+textarea, input { 
+    -webkit-appearance: none;
+}
+h1, h2, h3, h4, h5, h6{
+    line-height: 1.4;
 }
 
 /* remove changy_ad  */
@@ -93,10 +99,10 @@ small, .small{
 .bd_search_txt:hover{
     text-decoration: underline;
 }
-.header{
-    height: 16rem;
+.header {
+    height: 12rem;
     background: #ffffff;
-    margin-top: 5rem;
+    margin-top: 4rem;
 }
 .header_hr{
     margin-bottom: 4rem;
@@ -115,9 +121,9 @@ small, .small{
     margin-top: 2rem;
 }
 .gray{
-    color: #737373;
+    color: #8e8e8e;
     font-weight: 300;
-    font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei";
+    font-family: arial;
 }
 .tagc{
     text-align: center;
@@ -194,6 +200,7 @@ small, .small{
 .box_title{
     font-size: 1.6rem;
     margin-bottom: 2.4rem;
+    letter-spacing: .07rem;
 }
 
 .box_info{
@@ -229,24 +236,24 @@ pre{
     border: none;
     word-wrap: break-word;
     word-break:break-all;
-    margin: 1.6rem 0;
+    margin: 1.4rem 0 2rem 0;
     position: relative;
-    border-radius: .6rem;
+    border-radius: .2rem;
+    box-shadow: 0 0 1px #424242;
 }
 
 .hljs {
     border: 0;
     font-size: 1.1rem;
     display: block;
-    padding: 0rem !important;
     margin: 0;
     width: 100%;
     white-space: pre;
     background: #f7f7f7;
+    padding: 1.1rem 1rem 1.6rem 1.4rem !important;
 }
 .hljs ol {
     margin-left:0;
-    padding: 2.2rem 2rem 1rem 2rem;
     border-radius: .2rem;
     font-size: 100%;
 }
@@ -258,9 +265,6 @@ pre{
 .hljs ol li:before{
     content:"";
     counter-increment:none;
-}
-.hljs ol li:last-child{
-    height: 3rem;
 }
 .line_num{
     text-align: right;
@@ -288,19 +292,14 @@ pre{
     position: absolute;
     top: 0;
     right: 0;
-    background: #FFF;
-    border-bottom-left-radius: .6rem;
-    border: .1rem solid #f8f8f8;
     padding: .3rem .6rem;
     cursor: pointer;
-    color: #848484;
+    color: #a7a7a7;
     font-size: 1rem;
-    margin: 1px;
-    border-top-right-radius: .6rem;
+    text-indent: -1px;
 }
 .code_bar:hover{
-    color: #FFF;
-    background-color: #999;
+    color: #348fe2;
 }
 .copy_btn{
     float: right;
@@ -382,11 +381,11 @@ pre{
          url("../lib/font/miama/miama.woff.svg") format("svg");
 }
 #blog_body h1,#blog_body h2{
-    line-height: 3rem;
+    line-height: 2.8rem;
     border-bottom: .1rem solid #eaecef;
     padding-bottom: 1rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
 }
 #blog_body h3,#blog_body h4,#blog_body h5,#blog_body h6{
     line-height: 2rem;
@@ -402,10 +401,8 @@ pre{
     font-size: 18px;
 }
 #blog_body{
-    border-radius: .4rem;
     padding: 2rem 2.6rem;
-    margin: 2rem 0;
-    border: .1rem solid #e1e4e8;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 #blog_body ol{
     list-style-type: decimal;
@@ -413,6 +410,14 @@ pre{
 #blog_body ul li{
     list-style-type: disc;
     margin-left: 2rem;
+}
+#blog_body,.row img{
+    max-width:100%;
+    margin: 2rem 0 4rem 0;
+    display: block;
+}
+#blog_body img:hover{
+    box-shadow: 0 0 6px #348fe2;
 }
 .scroll_top{
     display: none;
@@ -457,8 +462,29 @@ pre{
     .box_info{
         line-height: 2rem !important;
     }
+    .hljs {
+        padding: 1.2rem 1rem 1.2rem 1.4rem !important;
+    }
     .hljs ol li{
         height: auto;
+        line-height: auto;
         list-style-type: none !important;
     }
+    #blog_body{
+        padding: 2rem 1rem;
+    }
+}
+.side_list .first{
+    margin-top: 0;
+    margin-bottom: 2.2rem;
+}
+.side_list img{
+    display: block;
+    width: 98%;
+    box-shadow: 0 0 .4rem #ddd;
+    margin: 2.2rem auto;
+    margin-bottom: 0;
+}
+.side_list img:hover{
+    opacity: .8;
 }

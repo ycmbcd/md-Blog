@@ -37,7 +37,8 @@ p{
     font-family: '微软雅黑',STXihei,Verdana,Calibri,Helvetica,Arial,sans-serif;
     line-height: 2rem;
     text-align: left;
-    margin-bottom: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     letter-spacing: .07rem;
     background: #f5f5f5;
     text-shadow: 5px -5px black, 4px -4px white;
@@ -49,16 +50,31 @@ p{
     color: #2a2a2a;
 }
 .pay_item{
-    margin-top: 1rem;
+    margin-top: 2rem;
     padding:.5rem 1rem;
     box-shadow: 0 0 .5rem #ddd;
-    border-radius: .8rem;
-    transition-duration: .15s;
+    border-radius: .3rem;
+    transition-duration: .35s;
     cursor: pointer;
+    opacity: 0.7;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 .pay_item:hover{
-    margin-top: .5rem;
-    box-shadow: 0 0 4rem #9E9E9E;
+    margin-top: 1rem;
+    opacity: 1;
+    box-shadow: 0 4px 18px 0 rgba(0,0,0,0.2), 0 10px 10px 0 rgba(0,0,0,0.30);
+}
+.pay_item img{
+    background: #666;
+    width: 90%;
+    margin: 2.4rem 0 2.4rem 5%;
+}
+#right_nav {
+    border: 2px solid #d7e7fb;
+    box-shadow: none;
+}
+#right_nav .box {
+    border-color: #d7e7fb;
 }
 #spotlight{
     background: rgba(0,0,0,.7) !important;

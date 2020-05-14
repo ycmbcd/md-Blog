@@ -123,10 +123,10 @@ $(function(){
 
     $(window).scroll(function(){
         if($(document).scrollTop() > 400){
-            $('.scroll_top').fadeIn();
+            $('.scroll_top').css('bottom','30px');
         }
         if($(document).scrollTop() < 400){
-            $('.scroll_top').fadeOut();
+            $('.scroll_top').css('bottom','-100px');
         }
     })
 });

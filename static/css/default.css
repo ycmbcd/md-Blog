@@ -420,6 +420,8 @@ pre{
 #blog_body ul li{
     list-style-type: disc;
     margin-left: 2rem;
+    margin-top: .6rem;
+    font-size: 1.4rem;
 }
 #blog_body,.row img{
     max-width:100%;

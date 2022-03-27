@@ -60,11 +60,14 @@ conf: \'{conf}\'
 
         // 获取打赏配置
         if($blog_conf['ali_qrcode'] == '' or $blog_conf['wx_qrcode'] == ''){
+            $ali_qrcode = '';
+            $wx_qrcode = '';
         }else{
             $ali_qrcode = '<div class="col-4 pay_item col-offset-1"><img src="'.$blog_conf['ali_qrcode'].'" /></div>';
             $wx_qrcode = '<div class="col-4 pay_item col-offset-2"><img src="'.$blog_conf['wx_qrcode'].'" /></div>';
         }
         $pay_txt = '<br><h3 class="tagc pay_txt">'.$blog_conf['pay_txt'].'</h3><br>';
+        $side_list = '';
         
         $c_time = date("Y-m-d H:i:s",$c_time);                
         $u_time = date("Y-m-d H:i:s",$u_time);                
